@@ -203,7 +203,7 @@ const Navbar = () => {
     >
       <AppBar
         position="absolute"
-        sx={{ ...navbarStyle, transition: "0.3s ease", padding: "3% 5%" }}
+        sx={{ ...navbarStyle, transition: "0.3s ease", padding: {md: "0.5% 5%", xs: "3% 5%"} }}
       >
         <Toolbar
           sx={{
@@ -306,6 +306,7 @@ const Navbar = () => {
                 borderRadius: "50px",
                 padding: "10px",
               }}
+              onClick={() => handleScroll("contact-us")}
             >
               {t("contact-us")}
             </Button>
