@@ -1,25 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from "react";
+import { useTranslation } from "react-i18next";
+import Navbar from "./Components/Navbar/Navbar";
+import AppRoutes from "./routing/AppRoutes";
+import { DirectionProvider } from "./context/DirectionContext";
+import "./App.css";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import Footer from "./Components/Footer/Footer";
 
-function App() {
+const AppContent = () => {
+  const { i18n } = useTranslation();
+  const [direction, setDirection] = React.useState("ltr");
+
+  useEffect(() => {
+    const currentLanguage = i18n.language;
+    const newDirection = currentLanguage === "ar" ? "rtl" : "ltr";
+    setDirection(newDirection);
+    document.documentElement.dir = newDirection;
+    document.documentElement.lang = currentLanguage;
+  }, [i18n.language]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App" style={{ direction }}>
+      <Navbar />
+      <AppRoutes />
+      <Footer />
     </div>
   );
-}
+};
+
+const App = () => (
+  <DirectionProvider>
+    <ToastContainer />
+    <AppContent />
+  </DirectionProvider>
+);
 
 export default App;
