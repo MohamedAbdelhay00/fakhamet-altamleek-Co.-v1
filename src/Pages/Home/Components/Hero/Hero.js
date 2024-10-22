@@ -16,11 +16,15 @@ export default function Home() {
 
   const scrollToContact = () => {
     const contactSection = document.getElementById("contact-us");
-    const projectsSection = document.getElementById("projects");
     if (contactSection) {
       contactSection.scrollIntoView({ behavior: "smooth" });
-    } else if (projectsSection) {
-        projectsSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  const scrollToProjects = () => {
+    const projectsSection = document.getElementById("projects");
+    if (projectsSection) {
+      projectsSection.scrollIntoView({ behavior: "smooth" });
     }
   };
 
@@ -32,7 +36,6 @@ export default function Home() {
         alignItems: "center",
         width: "100%",
         height: "100vh",
-        marginBottom: { xs: "2rem", md: "4rem" },
         boxSizing: "border-box",
         animation: `${fadeIn} 2s ease-in-out`,
       }}
@@ -56,23 +59,29 @@ export default function Home() {
         <Typography
           variant="h3"
           sx={{
+            fontFamily: isArabic ? "Cairo, sans-serif" : "Poppins, sans-serif",
             fontWeight: 700,
             fontSize: { xs: "2rem", md: "3rem", sm: "2.5rem" },
             color: "#fff",
             width: { xs: "90%", md: "70%" },
             paddingTop: "5%",
-            lineHeight: 1.2,
+            lineHeight: 1.3,
+            textAlign: isArabic ? "right" : "left",
           }}
         >
           {t("heroTitle")}
         </Typography>
         <Typography
           sx={{
+            fontFamily: isArabic ? "Cairo, sans-serif" : "Open Sans, sans-serif",
+            fontWeight: 400,
+            lineHeight: 1.6,
             color: "#fff",
             width: { xs: "80%", md: isArabic ? "40%" : "50%" },
             paddingTop: "20px",
             fontSize: { xs: "1rem", md: "1.5rem" },
             marginBottom: "20px",
+            textAlign: isArabic ? "right" : "left",
           }}
         >
           {t("heroSubTitle")}
@@ -81,12 +90,14 @@ export default function Home() {
           <Button
             variant="contained"
             sx={{
+              fontFamily: isArabic ? "Cairo, sans-serif" : "Poppins, sans-serif",
               padding: { xs: "8px 16px", md: "10px 20px" },
               fontSize: { xs: "0.9rem", md: "1rem" },
               backgroundColor: "#002D62",
               color: "#FFFFFF",
               borderRadius: "8px",
               minWidth: "120px",
+              textTransform: "uppercase",
             }}
             onClick={scrollToContact}
           >
@@ -96,17 +107,19 @@ export default function Home() {
           <Button
             variant="contained"
             sx={{
-              padding: "10px 20px",
-              fontSize: "1rem",
+              fontFamily: isArabic ? "Cairo, sans-serif" : "Poppins, sans-serif",
+              padding: { xs: "8px 16px", md: "10px 20px" },
+              fontSize: { xs: "0.9rem", md: "1rem" },
               backgroundColor: "#3DA9FC",
               color: "#FFFFFF",
               borderRadius: "8px",
               minWidth: "150px",
+              textTransform: "uppercase",
               "&:hover": {
                 backgroundColor: "#2A91D9",
               },
             }}
-            onClick={scrollToContact}
+            onClick={scrollToProjects}
           >
             {t("heroBtn2")}
           </Button>

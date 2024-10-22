@@ -34,6 +34,7 @@ const Navbar = () => {
   const [logoSrc, setLogoSrc] = useState(logo);
   const { t, i18n } = useTranslation();
   const { setDirection } = useDirection();
+  const isArabic = i18n.language === "ar";
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -132,8 +133,8 @@ const Navbar = () => {
           alt="Logo"
           style={{ width: "40px", marginRight: "10px" }}
         />
-        <Typography variant="h6" sx={{ color: "#002D62" }}>
-          Fakhamet Altamleek
+        <Typography variant="p" sx={{ color: "#002D62", margin: "0 5px" }}>
+          {t("companyName")}
         </Typography>
       </Box>
 
@@ -203,7 +204,11 @@ const Navbar = () => {
     >
       <AppBar
         position="absolute"
-        sx={{ ...navbarStyle, transition: "0.3s ease", padding: {md: "0.5% 5%", xs: "3% 5%"} }}
+        sx={{
+          ...navbarStyle,
+          transition: "0.3s ease",
+          padding: { md: "0.5% 5%", xs: "3% 5%" },
+        }}
       >
         <Toolbar
           sx={{
@@ -212,13 +217,19 @@ const Navbar = () => {
             alignItems: "center",
           }}
         >
-          <Box sx={{ flex: 1, display: "flex", justifyContent: "flex-start" }}>
+          <Box
+            sx={{
+              flex: 1,
+              display: "flex",
+              justifyContent: "flex-start",
+              width: { xs: "40px", md: "50px" },
+              height: { xs: "40px", md: "50px" },
+            }}
+          >
             <img
               src={logoSrc}
-              alt="Leadership Ideas Trading Company"
+              alt="Fakhamet Altamleek Co."
               style={{
-                width: "40px",
-                height: "40px",
                 cursor: "pointer",
                 borderRadius: "8px",
                 "@media (min-width: 600px)": {
@@ -235,8 +246,9 @@ const Navbar = () => {
               justifyContent: "center",
               gap: 2,
               color: navbarStyle.linkColor,
-              fontWeight: "bold",
-              fontSize: "1.2rem",
+              fontFamily: "Poppins, sans-serif",
+              fontWeight: 500,
+              fontSize: "1rem",
             }}
           >
             {["home", "about-us", "projects", "services", "testimonials"].map(
@@ -246,6 +258,7 @@ const Navbar = () => {
                   color="inherit"
                   onClick={() => handleScroll(key)}
                   sx={{
+                    fontFamily: isArabic ? "Cairo, sans-serif" : "Poppins, sans-serif",
                     position: "relative",
                     color: navbarStyle.linkColor,
                     "&:hover:after": {
@@ -288,11 +301,14 @@ const Navbar = () => {
               startIcon={<LanguageIcon sx={{ ml: 1 }} />}
               sx={{
                 display: { xs: "none", md: "flex" },
+                fontFamily: isArabic ? "Cairo, sans-serif" : "Poppins, sans-serif",
+                fontWeight: 600,
+                fontSize: "1rem",
                 color: "#002D62",
                 minWidth: "80px",
                 borderRadius: "50px",
                 border: "2px solid #000",
-                padding: "10px",
+                padding: "10px 20px",
               }}
             >
               {i18n.language === "en" ? "AR" : "EN"}
@@ -300,11 +316,15 @@ const Navbar = () => {
             <Button
               sx={{
                 display: { xs: "none", md: "flex" },
+                fontFamily: isArabic ? "Cairo, sans-serif" : "Poppins, sans-serif",
+                fontWeight: 500,
+                fontSize: "1rem",
                 color: "#fff",
                 minWidth: "100px",
                 backgroundColor: "rgba(0, 45, 98, 0.2)",
+                border: "2px solid rgba(0, 45, 98, 0.0)",
                 borderRadius: "50px",
-                padding: "10px",
+                padding: "10px 16px",
               }}
               onClick={() => handleScroll("contact-us")}
             >

@@ -8,5 +8,125 @@
     "heroTitle": "Modern Living in the Heart of Jeddah",
     "heroSubTitle": "Explore our curated selection of apartments, designed for comfort and elegance.",
     "heroBtn1": "Contact Us",
-    "heroBtn2": "View Projects"
-}
+    "heroBtn2": "View Projects",
+    "aboutUsTitle": "Your Trusted Real Estate Advisors",
+    "aboutUsSubTitle": "A cutting-edge real estate agent that offers a seamless and immersive experience for finding your dream home in the heart of the",
+    "customerSatisfaction": "Satisfied Customers",
+    "yearsOfExperience": "Years of Experience",
+    "winningAwards": "Award Winning",
+    "colelctionsOfProperty": "Collections of Property",
+    "aboutUs": "We have witnessed the ever-evolving landscape of the real estate market and become a trusted partner by thousands of clients.", 
+    "projectsTitle": "Discover Your Perfect Property Match", 
+    "projectsSubTitle": "Embark on a journey of discovery through exclusive collections of homes, luxury properties to fulfill your aspirations and inspire your imagination.",
+    "projectprice": "1,200,000 SAR",
+    "projectAddress": "55 king fahad road, Jeddah, Saudi Arabia",
+    "projectArea": "201.5 m²",
+    "projectBedrooms": "3 Beds",
+    "projectBathrooms": "2 Baths",
+    "servicesTitle": "Our Services",
+    "servicesSubTitle": "We offer a wide range of services to meet your needs, ensuring high quality and professional work at every stage.",
+    "servicesSection": {
+    "title": "Our Services",
+    "description": "We offer a wide range of services to meet your needs, ensuring high quality and professional work at every stage.",
+    "services": [
+      {
+        "title": "Renovation Services",
+        "description": "Once you decide to proceed with a renovation project, we offer a simple and convenient way to get in touch with us."
+      },
+      {
+        "title": "Plumbing Services",
+        "description": "Our goal is not just to provide a quick fix but to address the underlying issue to prevent future problems."
+      },
+      {
+        "title": "Electrical Services",
+        "description": "We will discuss any available options, provide accurate cost estimates, and answer any questions you may have."
+      },
+      {
+        "title": "Painting & Drywall",
+        "description": "We will listen to your concerns, conduct thorough inspections, and identify any areas that may require attention."
+      },
+      {
+        "title": "Wood & Flooring",
+        "description": "We will provide you with a detailed explanation of the recommended wood or flooring services."
+      }
+    ]
+  }, 
+  "testimonialsSection": {
+    "title": "Don't Trust Us, Trust Their Voice",
+    "subTitle": "Discover heartfelt accounts of joy and fulfillment as our valued clients embark on the quest for their dream homes and prime investments.",
+    "testimonials": [
+      {
+        "name": "Louis Padtrige",
+        "testimonial": "Choosing this real estate service was the best decision I ever made. Their team demonstrated exceptional professionalism and expertise. I highly recommend their services to anyone!",
+        "rating": 5
+      },
+      {
+        "name": "Rachel Hadid",
+        "testimonial": "Their expert negotiation skills helped me sell my property at a great price in no time. I would definitely work with them again.",
+        "rating": 5
+      },
+      {
+        "name": "Anastasia Baldwin",
+        "testimonial": "They patiently answered all our questions, provided valuable insights, and helped us secure our dream home within our budget.",
+        "rating": 4
+      },
+      {
+        "name": "Harry Jenda",
+        "testimonial": "They presented us with a stunning selection of homes that perfectly matched our preferences. The team's attention to detail and in-depth knowledge of the local market truly impressed us!",
+        "rating": 5
+      }
+    ]
+  },
+  "contactUsSection": {
+    "title": "Let’s Chat, We’re Here for You!",
+    "subTitle": "Have a question or need assistance? Reach out and we'll get back to you in no time.",
+    "office": {
+      "label": "Visit Our Office",
+      "address": "55 King Fahad Road, Jeddah, Saudi Arabia"
+    },
+    "phone": {
+      "label": "Give Us a Call",
+      "number": "+966 1234 567 890"
+    },
+    "email": {
+      "label": "Drop Us an Email",
+      "address": "contact@yourcompany.com"
+    },
+    "form": {
+      "title": "Let’s Get in Touch",
+      "namePlaceholder": "Your Name",
+      "emailPlaceholder": "Email Address",
+      "subjectPlaceholder": "Subject",
+      "messagePlaceholder": "Message",
+      "submit": "Send Message"
+    }
+  }, 
+  "footerSection": {
+    "upperTitle": "Ready To Work With Us?",
+    "upperSubtitle": "Experience top-notch customer service and let us guide you on your property journey.",
+    "contactUsButton": "Contact Us",
+    "companyLogo": "Your Logo",
+    "companyDescription": "A cutting-edge real estate agent that offers a seamless and immersive experience for finding your dream home.",
+    "emailPlaceholder": "Write your email here",
+    "emailSubmit": "Submit",
+    "links": {
+      "home": "Home",
+      "aboutUs": "About Us",
+      "collection": "Collection",
+      "blogNews": "Blog & News",
+      "security": {
+        "title": "Security",
+        "privacyPolicy": "Privacy Policy",
+        "userAgreements": "User Agreements",
+        "copyright": "Copyright"
+      },
+      "socialMedia": {
+        "title": "Social Media",
+        "instagram": "Instagram",
+        "facebook": "Facebook",
+        "twitter": "Twitter"
+      }
+    }
+  }, 
+  "companyName": "Fakhamet Altamleek Co."
+  }
