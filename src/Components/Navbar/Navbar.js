@@ -23,14 +23,16 @@ import { useLocation } from "react-router-dom";
 
 const Navbar = () => {
   const location = useLocation();
+  const isProjectsPage = location.pathname === "/projects";
   const isNotFoundPage = location.pathname === "/not-found";
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeLink, setActiveLink] = useState("home");
   const [navbarStyle, setNavbarStyle] = useState({
-    backgroundColor: "rgba(255, 255, 255, 0)",
+    backgroundColor: isProjectsPage ? "rgba(255, 255, 255, 1)" : "rgba(255, 255, 255, 0)",
     boxShadow: "none",
-    linkColor: "#fff",
+    linkColor: isProjectsPage ? "#002D62" : "#fff",
   });
+
   const [logoSrc, setLogoSrc] = useState(logo);
   const { t, i18n } = useTranslation();
   const { setDirection } = useDirection();
@@ -66,30 +68,38 @@ const Navbar = () => {
   };
 
   useEffect(() => {
-    const handleScrollEffect = () => {
-      if (window.scrollY > 80) {
-        setNavbarStyle({
-          backgroundColor: "rgba(255, 255, 255, 0.95)",
-          boxShadow: "0px 2px 10px rgba(0, 0, 0, 0.1)",
-          backdropFilter: "blur(10px)",
-          linkColor: "#002D62",
-        });
-        setLogoSrc(whiteLogo);
-      } else {
-        setNavbarStyle({
-          backgroundColor: "rgba(255, 255, 255, 0)",
-          boxShadow: "none",
-          linkColor: "#fff",
-        });
-        setLogoSrc(logo);
-      }
-    };
+    if (isProjectsPage) {
+      setNavbarStyle({
+        backgroundColor: "rgba(255, 255, 255, 1)",
+        boxShadow: "0px 2px 10px rgba(0, 0, 0, 0.1)",
+        linkColor: "#002D62",
+      });
+      setLogoSrc(whiteLogo);
+    } else {
+      const handleScrollEffect = () => {
+        if (window.scrollY > 80) {
+          setNavbarStyle({
+            backgroundColor: "rgba(255, 255, 255, 0.95)",
+            boxShadow: "0px 2px 10px rgba(0, 0, 0, 0.1)",
+            linkColor: "#002D62",
+          });
+          setLogoSrc(whiteLogo);
+        } else {
+          setNavbarStyle({
+            backgroundColor: "rgba(255, 255, 255, 0)",
+            boxShadow: "none",
+            linkColor: "#fff",
+          });
+          setLogoSrc(logo);
+        }
+      };
 
-    window.addEventListener("scroll", handleScrollEffect);
-    return () => {
-      window.removeEventListener("scroll", handleScrollEffect);
-    };
-  }, [logo]);
+      window.addEventListener("scroll", handleScrollEffect);
+      return () => {
+        window.removeEventListener("scroll", handleScrollEffect);
+      };
+    }
+  }, [isProjectsPage, logo]);
 
   useEffect(() => {
     const sections = ["home", "about-us", "projects", "services", "testimonials"];
@@ -225,6 +235,7 @@ const Navbar = () => {
               width: { xs: "40px", md: "50px" },
               height: { xs: "40px", md: "50px" },
             }}
+            onClick={() => handleScroll("home")}
           >
             <img
               src={logoSrc}
