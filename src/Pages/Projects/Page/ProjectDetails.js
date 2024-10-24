@@ -11,8 +11,10 @@ const projectsData = [
     title: "Luxury Villa in Al Hamra",
     description: "A luxury villa with a swimming pool, garden, and modern amenities.",
     availableApartments: [
-      { title: "Apartment 1", price: "$1,500,000", image: b1 },
-      { title: "Apartment 2", price: "$1,600,000", image: b2 },
+      { id: 1, title: "Apartment 1", description: "A luxury villa with a swimming pool, garden, and modern amenities.", price: "$1,500,000", image: b1 },
+      { id: 2, title: "Apartment 2", description: "A luxury villa with a swimming pool, garden, and modern amenities.", price: "$1,600,000", image: b2 },
+      { id: 3, title: "Apartment 3", description: "A luxury villa with a swimming pool, garden, and modern amenities.", price: "$1,600,000", image: b2 },
+      { id: 4, title: "Apartment 4", description: "A luxury villa with a swimming pool, garden, and modern amenities.", price: "$1,600,000", image: b2 },
     ],
   },
   // Add more projects as needed
@@ -30,7 +32,7 @@ const ProjectDetailsPage = () => {
     );
   }
   return (
-    <Box sx={{ padding: "5%" }}>
+    <Box sx={{ padding: "10% 5%" }}>
       <Typography
         variant="h3"
         sx={{ fontWeight: 700, color: "#002D62", marginBottom: 2 }}
@@ -46,8 +48,8 @@ const ProjectDetailsPage = () => {
       </Typography>
       <Grid container spacing={4}>
         {project.availableApartments.map((apartment, index) => (
-          <Grid item xs={12} sm={6} key={index}>
-            <Card sx={{ borderRadius: "16px", overflow: "hidden" }}>
+          <Grid item xs={12} sm={6} md={4} key={index}>
+            <Card sx={{ borderRadius: "16px", overflow: "hidden", height: "100%" }}>
               <CardMedia
                 component="img"
                 image={apartment.image}
@@ -58,8 +60,11 @@ const ProjectDetailsPage = () => {
                 <Typography variant="h6" sx={{ color: "#002D62" }}>
                   {apartment.title}
                 </Typography>
+                <Typography variant="body1" sx={{ color: "#666666" }}>
+                  {apartment.description}
+                </Typography>
                 <Typography variant="body2" sx={{ color: "#F36F21" }}>
-                  {apartment.price}
+                  starts form {apartment.price}
                 </Typography>
                 <Button
                   variant="outlined"

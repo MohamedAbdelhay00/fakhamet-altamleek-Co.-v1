@@ -67,7 +67,7 @@ const ProjectsPage = () => {
   };
 
   return (
-    <Box sx={{ padding: "5% 5%" }}>
+    <Box sx={{ padding: "10% 5%" }}>
       {/* Hero Section */}
       <Box sx={{ textAlign: "center", marginBottom: "4rem" }}>
         <Typography variant="h3" sx={{ fontWeight: 700, fontFamily: "Poppins, sans-serif", color: "#002D62" }}>
@@ -121,8 +121,8 @@ const ProjectsPage = () => {
       <Grid container spacing={4}>
         {filteredProjects.length > 0 ? (
           filteredProjects.map((project) => (
-            <Grid item xs={12} sm={6} md={4} key={project.id}>
-              <Card sx={{ borderRadius: "16px", boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)", overflow: "hidden" }}>
+            <Grid item xs={12} sm={6} md={3} key={project.id}>
+              <Card sx={{ borderRadius: "16px", boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)", overflow: "hidden", height: "100%" }}>
                 <CardMedia component="img" image={project.image} alt={project.title} sx={{ height: 200 }} />
                 <CardContent>
                   <Typography variant="h6" sx={{ fontWeight: 700, fontFamily: "Poppins, sans-serif", color: "#002D62" }}>
@@ -137,7 +137,7 @@ const ProjectsPage = () => {
                   <Button
                     variant="outlined"
                     component={Link}
-                    to={`/projects/${project.id}`}
+                    to={`/projects/${project.id}/apartments`}
                     sx={{ marginTop: 2, color: "#002D62", borderColor: "#002D62" }}
                   >
                     View Details

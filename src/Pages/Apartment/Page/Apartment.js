@@ -13,7 +13,7 @@ const ApartmentDetails = () => {
   };
 
   return (
-    <Box sx={{ padding: "5%" }}>
+    <Box sx={{ padding: "10% 5%" }}>
       {/* Row 1 - Images */}
       <Grid container spacing={2}>
         <Grid item xs={12} md={6}>
@@ -51,22 +51,11 @@ const ApartmentDetails = () => {
       </Grid>
 
       {/* Row 2 - Details */}
+      <Grid item xs={12} md={6} sx={{display: "flex", justifyContent: "space-between"}}>
       <Box sx={{ marginTop: "3rem" }}>
         <Typography variant="h4" sx={{ fontWeight: 700, color: "#002D62" }}>
           $1,528,950
         </Typography>
-        <Typography variant="body1" sx={{ color: "#555", marginTop: "1rem" }}>
-          233 m² | 2 floors | 4 beds | 5 baths
-        </Typography>
-
-        <Typography variant="body2" sx={{ marginTop: "2rem", color: "#555" }}>
-          Up for sale is a spacious home in Benevento, Italy, nestled in a picturesque setting. This exceptional eco-friendly residence is characterized by quality and luxurious living.
-        </Typography>
-
-        <Typography variant="body2" sx={{ marginTop: "1rem", color: "#F36F21" }}>
-          Lake view | Mountain view
-        </Typography>
-
         <Button
           variant="contained"
           sx={{
@@ -81,6 +70,18 @@ const ApartmentDetails = () => {
           Contact Agent
         </Button>
       </Box>
+      <Box sx={{ marginTop: "3rem", width: {xs: "100%", md: "50%"} }}>
+      <Typography variant="h4" sx={{ color: "#555"}}>
+          233 m² | 2 floors | 4 beds | 5 baths
+        </Typography>
+        <Typography variant="body2" sx={{ marginTop: "1rem", color: "#F36F21" }}>
+          Lake view | Mountain view
+        </Typography>
+        <Typography variant="body1" sx={{ marginTop: "2rem", color: "#555" }}>
+          Up for sale is a spacious home in Benevento, Italy, nestled in a picturesque setting. This exceptional eco-friendly residence is characterized by quality and luxurious living.
+        </Typography>
+      </Box>
+      </Grid>
     </Box>
   );
 };

@@ -5,7 +5,6 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import { useTranslation } from 'react-i18next';
 import i18n from '../../i18n';
-import logo from '../../assets/imgs/Untitled design (4).png';
 
 export default function FooterSection() {
   const { t } = useTranslation();

@@ -1,8 +1,5 @@
 import React from "react";
-import { Box, Grid, Typography, TextField, Button, IconButton } from "@mui/material";
-import LocationOnIcon from "@mui/icons-material/LocationOn";
-import PhoneIcon from "@mui/icons-material/Phone";
-import EmailIcon from "@mui/icons-material/Email";
+import { Box, Grid, Typography, TextField, Button } from "@mui/material";
 import { useTranslation } from "react-i18next";
 
 export default function EnglishForm() {

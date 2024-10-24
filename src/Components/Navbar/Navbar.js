@@ -24,11 +24,17 @@ import { useLocation } from "react-router-dom";
 const Navbar = () => {
   const location = useLocation();
   const isProjectsPage = location.pathname === "/projects";
+  const isProjectDetailsPage = /^\/projects\/[^/]+\/apartments$/.test(location.pathname);
+const isApartmentDetailsPage = /^\/projects\/[^/]+\/apartments\/[^/]+$/.test(
+  location.pathname
+);
   const isNotFoundPage = location.pathname === "/not-found";
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeLink, setActiveLink] = useState("home");
   const [navbarStyle, setNavbarStyle] = useState({
-    backgroundColor: isProjectsPage ? "rgba(255, 255, 255, 1)" : "rgba(255, 255, 255, 0)",
+    backgroundColor: isProjectsPage
+      ? "rgba(255, 255, 255, 1)"
+      : "rgba(255, 255, 255, 0)",
     boxShadow: "none",
     linkColor: isProjectsPage ? "#002D62" : "#fff",
   });
@@ -68,7 +74,7 @@ const Navbar = () => {
   };
 
   useEffect(() => {
-    if (isProjectsPage) {
+    if (isProjectsPage || isProjectDetailsPage || isApartmentDetailsPage) {
       setNavbarStyle({
         backgroundColor: "rgba(255, 255, 255, 1)",
         boxShadow: "0px 2px 10px rgba(0, 0, 0, 0.1)",
@@ -99,18 +105,24 @@ const Navbar = () => {
         window.removeEventListener("scroll", handleScrollEffect);
       };
     }
-  }, [isProjectsPage, logo]);
+  }, [isProjectsPage, isProjectDetailsPage, isApartmentDetailsPage]);
 
   useEffect(() => {
-    const sections = ["home", "about-us", "projects", "services", "testimonials"];
+    const sections = [
+      "home",
+      "about-us",
+      "projects",
+      "services",
+      "testimonials",
+    ];
     const navbarHeight = document.querySelector("header")?.offsetHeight || 0;
-  
+
     const observerOptions = {
       root: null,
       rootMargin: `-${navbarHeight}px 0px 0px 0px`,
       threshold: 0.3,
     };
-  
+
     const observerCallback = (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
@@ -118,14 +130,17 @@ const Navbar = () => {
         }
       });
     };
-  
-    const observer = new IntersectionObserver(observerCallback, observerOptions);
-  
+
+    const observer = new IntersectionObserver(
+      observerCallback,
+      observerOptions
+    );
+
     sections.forEach((id) => {
       const section = document.getElementById(id);
       if (section) observer.observe(section);
     });
-  
+
     return () => {
       sections.forEach((id) => {
         const section = document.getElementById(id);
@@ -133,7 +148,6 @@ const Navbar = () => {
       });
     };
   }, [i18n.language]);
-  
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
@@ -269,7 +283,9 @@ const Navbar = () => {
                   color="inherit"
                   onClick={() => handleScroll(key)}
                   sx={{
-                    fontFamily: isArabic ? "Cairo, sans-serif" : "Poppins, sans-serif",
+                    fontFamily: isArabic
+                      ? "Cairo, sans-serif"
+                      : "Poppins, sans-serif",
                     position: "relative",
                     color: navbarStyle.linkColor,
                     "&:hover:after": {
@@ -312,7 +328,9 @@ const Navbar = () => {
               startIcon={<LanguageIcon sx={{ ml: 1 }} />}
               sx={{
                 display: { xs: "none", md: "flex" },
-                fontFamily: isArabic ? "Cairo, sans-serif" : "Poppins, sans-serif",
+                fontFamily: isArabic
+                  ? "Cairo, sans-serif"
+                  : "Poppins, sans-serif",
                 fontWeight: 600,
                 fontSize: "1rem",
                 color: "#002D62",
@@ -327,7 +345,9 @@ const Navbar = () => {
             <Button
               sx={{
                 display: { xs: "none", md: "flex" },
-                fontFamily: isArabic ? "Cairo, sans-serif" : "Poppins, sans-serif",
+                fontFamily: isArabic
+                  ? "Cairo, sans-serif"
+                  : "Poppins, sans-serif",
                 fontWeight: 500,
                 fontSize: "1rem",
                 color: "#fff",

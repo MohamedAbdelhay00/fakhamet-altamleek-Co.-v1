@@ -5,19 +5,14 @@ import {
   Typography,
   Card,
   CardMedia,
-  CardContent,
   Button,
   Divider,
 } from "@mui/material";
-import BedIcon from "@mui/icons-material/Bed";
-import CropSquareIcon from "@mui/icons-material/CropSquare";
-import BathtubIcon from "@mui/icons-material/Bathtub";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import property1 from "../../../../assets/imgs/b2.png";
 import property2 from "../../../../assets/imgs/b3.jpg";
 import property3 from "../../../../assets/imgs/b1.png";
 import property4 from "../../../../assets/imgs/b4.jpg";
-import { t } from "i18next";
 import i18n from "../../../../i18n";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
