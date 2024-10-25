@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Box, Grid, Typography, TextField, Button, Card, CardMedia, CardContent, MenuItem } from "@mui/material";
 import { Link } from "react-router-dom";
 import SearchIcon from "@mui/icons-material/Search";
@@ -6,43 +6,15 @@ import b1 from "../../../assets/imgs/b1.png";
 import b2 from "../../../assets/imgs/b2.png";
 import b3 from "../../../assets/imgs/b3.jpg";
 import b4 from "../../../assets/imgs/b4.jpg";
+import projects from "../../../data/projects";
 
-const projectsData = [
-  {
-    id: 1,
-    title: "Luxury Villa in Al Hamra",
-    location: "Al Hamra, Jeddah, Saudi Arabia",
-    price: "$2,500,000",
-    image: b1,
-    description: "A luxury villa with a swimming pool, garden, and modern amenities."
-  },
-  {
-    id: 2,
-    title: "Modern Apartment in Al Rawda",
-    location: "Al Rawda, Jeddah, Saudi Arabia",
-    price: "$1,200,000",
-    image: b2,
-    description: "A modern apartment located in the heart of Al Rawda with beautiful interiors."
-  },
-  {
-    id: 3,
-    title: "Spacious Family House in Al Rehab",
-    location: "Al Rehab, Jeddah, Saudi Arabia",
-    price: "$1,800,000",
-    image: b3,
-    description: "A spacious family house with a backyard and 5 bedrooms."
-  },
-  {
-    id: 4,
-    title: "Luxury Penthouse in Al Safa",
-    location: "Al Safa, Jeddah, Saudi Arabia",
-    price: "$3,000,000",
-    image: b4,
-    description: "A luxury penthouse offering amazing views of the city skyline."
-  },
-];
 
 const ProjectsPage = () => {
+  const  [projectsData, setProjectsData] = useState([]);
+  useEffect(() => {
+    setProjectsData(projects);
+    setFilteredProjects(projects);
+  }, []);
   const [filter, setFilter] = useState({ search: "", location: "", priceRange: "" });
   const [filteredProjects, setFilteredProjects] = useState(projectsData);
 

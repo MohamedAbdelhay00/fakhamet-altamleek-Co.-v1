@@ -1,0 +1,343 @@
+[
+    {
+      "id": 1,
+      "projectId": 1,
+      "title": "Penthouse Apartment",
+      "size": "233 m²",
+      "floors": 2,
+      "beds": 4,
+      "baths": 5,
+      "price": "$1,528,950",
+      "view": "Lake view | Mountain view",
+      "mainImage": "/assets/images/apartment1_main.jpg",
+      "images": [
+        "/assets/images/apartment1_1.jpg",
+        "/assets/images/apartment1_2.jpg",
+        "/assets/images/apartment1_3.jpg"
+      ]
+    },
+    {
+      "id": 2,
+      "projectId": 1,
+      "title": "Family Apartment",
+      "size": "150 m²",
+      "floors": 1,
+      "beds": 3,
+      "baths": 2,
+      "price": "$1,200,000",
+      "view": "City view",
+      "mainImage": "/assets/images/apartment2_main.jpg",
+      "images": [
+        "/assets/images/apartment2_1.jpg",
+        "/assets/images/apartment2_2.jpg",
+        "/assets/images/apartment2_3.jpg"
+      ]
+    },
+    {
+      "id": 3,
+      "projectId": 1,
+      "title": "Modern Studio",
+      "size": "80 m²",
+      "floors": 1,
+      "beds": 1,
+      "baths": 1,
+      "price": "$700,000",
+      "view": "Garden view",
+      "mainImage": "/assets/images/apartment3_main.jpg",
+      "images": [
+        "/assets/images/apartment3_1.jpg",
+        "/assets/images/apartment3_2.jpg",
+        "/assets/images/apartment3_3.jpg"
+      ]
+    },
+    {
+      "id": 4,
+      "projectId": 2,
+      "title": "Luxury Apartment with Pool",
+      "size": "300 m²",
+      "floors": 3,
+      "beds": 5,
+      "baths": 4,
+      "price": "$2,100,000",
+      "view": "Sea view",
+      "mainImage": "/assets/images/apartment4_main.jpg",
+      "images": [
+        "/assets/images/apartment4_1.jpg",
+        "/assets/images/apartment4_2.jpg",
+        "/assets/images/apartment4_3.jpg"
+      ]
+    },
+    {
+      "id": 5,
+      "projectId": 2,
+      "title": "Cozy Studio Apartment",
+      "size": "80 m²",
+      "floors": 1,
+      "beds": 1,
+      "baths": 1,
+      "price": "$500,000",
+      "view": "Garden view",
+      "mainImage": "/assets/images/apartment5_main.jpg",
+      "images": [
+        "/assets/images/apartment5_1.jpg",
+        "/assets/images/apartment5_2.jpg",
+        "/assets/images/apartment5_3.jpg"
+      ]
+    },
+    {
+      "id": 6,
+      "projectId": 3,
+      "title": "Penthouse with Sea View",
+      "size": "350 m²",
+      "floors": 2,
+      "beds": 4,
+      "baths": 3,
+      "price": "$2,800,000",
+      "view": "Sea view",
+      "mainImage": "/assets/images/apartment6_main.jpg",
+      "images": [
+        "/assets/images/apartment6_1.jpg",
+        "/assets/images/apartment6_2.jpg",
+        "/assets/images/apartment6_3.jpg"
+      ]
+    },
+    {
+      "id": 7,
+      "projectId": 3,
+      "title": "Luxury Seaside Apartment",
+      "size": "200 m²",
+      "floors": 1,
+      "beds": 3,
+      "baths": 3,
+      "price": "$2,000,000",
+      "view": "Sea view",
+      "mainImage": "/assets/images/apartment7_main.jpg",
+      "images": [
+        "/assets/images/apartment7_1.jpg",
+        "/assets/images/apartment7_2.jpg",
+        "/assets/images/apartment7_3.jpg"
+      ]
+    },
+    {
+      "id": 8,
+      "projectId": 3,
+      "title": "Modern Apartment",
+      "size": "120 m²",
+      "floors": 1,
+      "beds": 2,
+      "baths": 2,
+      "price": "$1,500,000",
+      "view": "City view",
+      "mainImage": "/assets/images/apartment8_main.jpg",
+      "images": [
+        "/assets/images/apartment8_1.jpg",
+        "/assets/images/apartment8_2.jpg",
+        "/assets/images/apartment8_3.jpg"
+      ]
+    },
+    {
+      "id": 9,
+      "projectId": 4,
+      "title": "Luxury Suite",
+      "size": "180 m²",
+      "floors": 1,
+      "beds": 3,
+      "baths": 3,
+      "price": "$1,700,000",
+      "view": "Downtown view",
+      "mainImage": "/assets/images/apartment9_main.jpg",
+      "images": [
+        "/assets/images/apartment9_1.jpg",
+        "/assets/images/apartment9_2.jpg",
+        "/assets/images/apartment9_3.jpg"
+      ]
+    },
+    {
+      "id": 10,
+      "projectId": 4,
+      "title": "Luxury Penthouse",
+      "size": "220 m²",
+      "floors": 2,
+      "beds": 4,
+      "baths": 4,
+      "price": "$2,000,000",
+      "view": "City view",
+      "mainImage": "/assets/images/apartment10_main.jpg",
+      "images": [
+        "/assets/images/apartment10_1.jpg",
+        "/assets/images/apartment10_2.jpg",
+        "/assets/images/apartment10_3.jpg"
+      ]
+    },
+    {
+      "id": 11,
+      "projectId": 4,
+      "title": "Downtown Studio",
+      "size": "85 m²",
+      "floors": 1,
+      "beds": 1,
+      "baths": 1,
+      "price": "$750,000",
+      "view": "City view",
+      "mainImage": "/assets/images/apartment11_main.jpg",
+      "images": [
+        "/assets/images/apartment11_1.jpg",
+        "/assets/images/apartment11_2.jpg",
+        "/assets/images/apartment11_3.jpg"
+      ]
+    },
+    {
+      "id": 12,
+      "projectId": 4,
+      "title": "Deluxe Apartment",
+      "size": "190 m²",
+      "floors": 1,
+      "beds": 3,
+      "baths": 2,
+      "price": "$1,800,000",
+      "view": "Downtown view",
+      "mainImage": "/assets/images/apartment12_main.jpg",
+      "images": [
+        "/assets/images/apartment12_1.jpg",
+        "/assets/images/apartment12_2.jpg",
+        "/assets/images/apartment12_3.jpg"
+      ]
+    },
+    {
+      "id": 13,
+      "projectId": 5,
+      "title": "Elite Penthouse",
+      "size": "330 m²",
+      "floors": 3,
+      "beds": 5,
+      "baths": 4,
+      "price": "$3,000,000",
+      "view": "Luxury city view",
+      "mainImage": "/assets/images/apartment13_main.jpg",
+      "images": [
+        "/assets/images/apartment13_1.jpg",
+        "/assets/images/apartment13_2.jpg",
+        "/assets/images/apartment13_3.jpg"
+      ]
+    },
+    {
+      "id": 14,
+      "projectId": 5,
+      "title": "Deluxe Apartment",
+      "size": "180 m²",
+      "floors": 1,
+      "beds": 3,
+      "baths": 2,
+      "price": "$1,700,000",
+      "view": "Luxury view",
+      "mainImage": "/assets/images/apartment14_main.jpg",
+      "images": [
+        "/assets/images/apartment14_1.jpg",
+        "/assets/images/apartment14_2.jpg",
+        "/assets/images/apartment14_3.jpg"
+      ]
+    },
+    {
+      "id": 15,
+      "projectId": 6,
+      "title": "Marina View Apartment",
+      "size": "270 m²",
+      "floors": 2,
+      "beds": 4,
+      "baths": 3,
+      "price": "$1,900,000",
+      "view": "Marina view",
+      "mainImage": "/assets/images/apartment15_main.jpg",
+      "images": [
+        "/assets/images/apartment15_1.jpg",
+        "/assets/images/apartment15_2.jpg",
+        "/assets/images/apartment15_3.jpg"
+      ]
+    },
+    {
+      "id": 16,
+      "projectId": 6,
+      "title": "Luxury Waterfront Suite",
+      "size": "300 m²",
+      "floors": 3,
+      "beds": 5,
+      "baths": 4,
+      "price": "$2,500,000",
+      "view": "Marina view",
+      "mainImage": "/assets/images/apartment16_main.jpg",
+      "images": [
+        "/assets/images/apartment16_1.jpg",
+        "/assets/images/apartment16_2.jpg",
+        "/assets/images/apartment16_3.jpg"
+      ]
+    },
+    {
+      "id": 17,
+      "projectId": 6,
+      "title": "Seaside Studio",
+      "size": "100 m²",
+      "floors": 1,
+      "beds": 1,
+      "baths": 1,
+      "price": "$900,000",
+      "view": "Sea view",
+      "mainImage": "/assets/images/apartment17_main.jpg",
+      "images": [
+        "/assets/images/apartment17_1.jpg",
+        "/assets/images/apartment17_2.jpg",
+        "/assets/images/apartment17_3.jpg"
+      ]
+    },
+    {
+      "id": 18,
+      "projectId": 7,
+      "title": "City Garden Apartment",
+      "size": "130 m²",
+      "floors": 1,
+      "beds": 3,
+      "baths": 2,
+      "price": "$950,000",
+      "view": "Garden view",
+      "mainImage": "/assets/images/apartment18_main.jpg",
+      "images": [
+        "/assets/images/apartment18_1.jpg",
+        "/assets/images/apartment18_2.jpg",
+        "/assets/images/apartment18_3.jpg"
+      ]
+    },
+    {
+      "id": 19,
+      "projectId": 7,
+      "title": "Modern Garden Apartment",
+      "size": "120 m²",
+      "floors": 1,
+      "beds": 2,
+      "baths": 2,
+      "price": "$850,000",
+      "view": "Garden view",
+      "mainImage": "/assets/images/apartment19_main.jpg",
+      "images": [
+        "/assets/images/apartment19_1.jpg",
+        "/assets/images/apartment19_2.jpg",
+        "/assets/images/apartment19_3.jpg"
+      ]
+    },
+    {
+      "id": 20,
+      "projectId": 7,
+      "title": "Luxury Penthouse Garden",
+      "size": "250 m²",
+      "floors": 2,
+      "beds": 4,
+      "baths": 3,
+      "price": "$1,500,000",
+      "view": "Garden and city view",
+      "mainImage": "/assets/images/apartment20_main.jpg",
+      "images": [
+        "/assets/images/apartment20_1.jpg",
+        "/assets/images/apartment20_2.jpg",
+        "/assets/images/apartment20_3.jpg"
+      ]
+    }
+  ]
+  
