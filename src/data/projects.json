@@ -1,66 +1,65 @@
 [
-    {
-      "id": 1,
-      "title": "Luxury Apartments in Jeddah",
-      "location": "55 King Fahad Road, Jeddah, Saudi Arabia",
-      "price": "$1,528,950",
-      "description": "A beautiful collection of luxury apartments in the heart of Jeddah.",
-      "image": "/assets/imgs/b1.png",
-      "apartments": [1, 2, 3]
-    },
-    {
-      "id": 2,
-      "title": "Modern Apartments in Jeddah",
-      "location": "22 Malik Street, Jeddah, Saudi Arabia",
-      "price": "$2,100,000",
-      "description": "Modern and stylish apartments in the busy city center.",
-      "image": "/assets/images/project2_main.jpg",
-      "apartments": [4, 5]
-    },
-    {
-      "id": 3,
-      "title": "Sea View Residences",
-      "location": "Al Hamra Corniche, Jeddah, Saudi Arabia",
-      "price": "$2,800,000",
-      "description": "Experience the breathtaking sea views from these premium residences.",
-      "image": "/assets/images/project3_main.jpg",
-      "apartments": [6, 7, 8]
-    },
-    {
-      "id": 4,
-      "title": "Downtown Luxury Suites",
-      "location": "Al Andalus Road, Jeddah, Saudi Arabia",
-      "price": "$1,700,000",
-      "description": "Luxury suites located in the heart of downtown Jeddah.",
-      "image": "/assets/images/project4_main.jpg",
-      "apartments": [9, 10, 11, 12]
-    },
-    {
-      "id": 5,
-      "title": "The Elite Residences",
-      "location": "Tahliya Street, Jeddah, Saudi Arabia",
-      "price": "$3,000,000",
-      "description": "Elite apartments for those who want to live in the lap of luxury.",
-      "image": "/assets/images/project5_main.jpg",
-      "apartments": [13, 14]
-    },
-    {
-      "id": 6,
-      "title": "Marina Residences",
-      "location": "Corniche Street, Jeddah, Saudi Arabia",
-      "price": "$1,900,000",
-      "description": "Waterfront apartments with stunning marina views.",
-      "image": "/assets/images/project6_main.jpg",
-      "apartments": [15, 16, 17]
-    },
-    {
-      "id": 7,
-      "title": "City Garden Apartments",
-      "location": "Al Safa District, Jeddah, Saudi Arabia",
-      "price": "$950,000",
-      "description": "Garden apartments located in a peaceful residential area.",
-      "image": "/assets/images/project7_main.jpg",
-      "apartments": [18, 19, 20]
-    }
-  ]
-  
+  {
+    "id": 1,
+    "title": { "en": "Luxury Apartments in Jeddah", "ar": "شقق فاخرة في جدة" },
+    "location": { "en": "55 King Fahad Road, Jeddah, Saudi Arabia", "ar": "طريق الملك فهد 55، جدة، المملكة العربية السعودية" },
+    "price": { "en": "Starts from 1,528,950 SAR", "ar": "تبدأ من 1,528,950 ريال سعودي" },
+    "description": { "en": "A beautiful collection of luxury apartments in the heart of Jeddah.", "ar": "مجموعة جميلة من الشقق الفاخرة في قلب جدة." },
+    "image": "/assets/imgs/b1.png",
+    "apartments": [1, 2, 3]
+  },
+  {
+    "id": 2,
+    "title": { "en": "Modern Apartments in Jeddah", "ar": "شقق حديثة في جدة" },
+    "location": { "en": "22 Malik Street, Jeddah, Saudi Arabia", "ar": "شارع الملك 22، جدة، المملكة العربية السعودية" },
+    "price": { "en": "Starts from 2,100,000 SAR", "ar": "تبدأ من 2,100,000 ريال سعودي" },
+    "description": { "en": "Modern and stylish apartments in the busy city center.", "ar": "شقق حديثة وعصرية في وسط المدينة المزدحم." },
+    "image": "/assets/imgs/b2.png",
+    "apartments": [4, 5]
+  },
+  {
+    "id": 3,
+    "title": { "en": "Sea View Residences", "ar": "إقامات بإطلالة على البحر" },
+    "location": { "en": "Al Hamra Corniche, Jeddah, Saudi Arabia", "ar": "كورنيش الحمراء، جدة، المملكة العربية السعودية" },
+    "price": { "en": "Starts from 2,800,000 SAR", "ar": "تبدأ من 2,800,000 ريال سعودي" },
+    "description": { "en": "Experience the breathtaking sea views from these premium residences.", "ar": "استمتع بإطلالات خلابة على البحر من هذه الإقامات المميزة." },
+    "image": "/assets/imgs/b3.jpg",
+    "apartments": [6, 7, 8]
+  },
+  {
+    "id": 4,
+    "title": { "en": "Downtown Luxury Suites", "ar": "أجنحة فاخرة في وسط المدينة" },
+    "location": { "en": "Al Andalus Road, Jeddah, Saudi Arabia", "ar": "طريق الأندلس، جدة، المملكة العربية السعودية" },
+    "price": { "en": "Starts from 1,700,000 SAR", "ar": "تبدأ من 1,700,000 ريال سعودي" },
+    "description": { "en": "Luxury suites located in the heart of downtown Jeddah.", "ar": "أجنحة فاخرة تقع في قلب وسط جدة." },
+    "image": "/assets/imgs/b4.jpg",
+    "apartments": [9, 10, 11, 12]
+  },
+  {
+    "id": 5,
+    "title": { "en": "The Elite Residences", "ar": "إقامات النخبة" },
+    "location": { "en": "Tahliya Street, Jeddah, Saudi Arabia", "ar": "شارع التحلية، جدة، المملكة العربية السعودية" },
+    "price": { "en": "Starts from 3,000,000 SAR", "ar": "تبدأ من 3,000,000 ريال سعودي" },
+    "description": { "en": "Elite apartments for those who want to live in the lap of luxury.", "ar": "شقق النخبة لمن يريدون العيش برفاهية." },
+    "image": "/assets/imgs/b1.png",
+    "apartments": [13, 14]
+  },
+  {
+    "id": 6,
+    "title": { "en": "Marina Residences", "ar": "إقامات المارينا" },
+    "location": { "en": "Corniche Street, Jeddah, Saudi Arabia", "ar": "شارع الكورنيش، جدة، المملكة العربية السعودية" },
+    "price": { "en": "Starts from 1,900,000 SAR", "ar": "تبدأ من 1,900,000 ريال سعودي" },
+    "description": { "en": "Waterfront apartments with stunning marina views.", "ar": "شقق على الواجهة المائية بإطلالات مذهلة على المارينا." },
+    "image": "/assets/imgs/b4.jpg",
+    "apartments": [15, 16, 17]
+  },
+  {
+    "id": 7,
+    "title": { "en": "City Garden Apartments", "ar": "شقق حديقة المدينة" },
+    "location": { "en": "Al Safa District, Jeddah, Saudi Arabia", "ar": "حي الصفا، جدة، المملكة العربية السعودية" },
+    "price": { "en": "Starts from 950,000 SAR", "ar": "تبدأ من 950,000 ريال سعودي" },
+    "description": { "en": "Garden apartments located in a peaceful residential area.", "ar": "شقق بحديقة تقع في منطقة سكنية هادئة." },
+    "image": "/assets/imgs/b2.png",
+    "apartments": [18, 19, 20]
+  }
+]

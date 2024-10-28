@@ -1,29 +1,17 @@
 import React from "react";
 import { Box, Typography, Grid, Card, CardContent, CardMedia, Button } from "@mui/material";
 import { useNavigate, useParams } from "react-router-dom";
-import b1 from "../../../assets/imgs/b1.png";
-import b2 from "../../../assets/imgs/b2.png";
-
-// Project data
-const projectsData = [
-  {
-    id: 1,
-    title: "Luxury Villa in Al Hamra",
-    description: "A luxury villa with a swimming pool, garden, and modern amenities.",
-    availableApartments: [
-      { id: 1, title: "Apartment 1", description: "A luxury villa with a swimming pool, garden, and modern amenities.", price: "$1,500,000", image: b1 },
-      { id: 2, title: "Apartment 2", description: "A luxury villa with a swimming pool, garden, and modern amenities.", price: "$1,600,000", image: b2 },
-      { id: 3, title: "Apartment 3", description: "A luxury villa with a swimming pool, garden, and modern amenities.", price: "$1,600,000", image: b2 },
-      { id: 4, title: "Apartment 4", description: "A luxury villa with a swimming pool, garden, and modern amenities.", price: "$1,600,000", image: b2 },
-    ],
-  },
-  // Add more projects as needed
-];
+import projectsData from "../../../data/projects";
+import apartmentsData from "../../../data/apartments";
+import i18n from "../../../i18n";
 
 const ProjectDetailsPage = () => {
   const { projectId } = useParams();
   const project = projectsData.find((p) => p.id === parseInt(projectId));
   const navigate = useNavigate();
+  const language = i18n.language;
+  const { t } = i18n;
+
   if (!project) {
     return (
       <Box sx={{ padding: "5%", textAlign: "center" }}>
@@ -31,47 +19,51 @@ const ProjectDetailsPage = () => {
       </Box>
     );
   }
+
+  // Filter apartments that belong to this project
+  const relatedApartments = apartmentsData.filter(
+    (apartment) => apartment.projectId === parseInt(projectId)
+  );
+
   return (
-    <Box sx={{ padding: "10% 5%" }}>
+    <Box sx={{ padding: "10% 5%", width: "100%", overflow: "hidden" }}>
       <Typography
         variant="h3"
         sx={{ fontWeight: 700, color: "#002D62", marginBottom: 2 }}
       >
-        {project.title}
+        {project.title[language]}
       </Typography>
       <Typography variant="body1" sx={{ marginBottom: 4 }}>
-        {project.description}
+        {project.description[language]}
       </Typography>
 
       <Typography variant="h5" sx={{ marginBottom: 2 }}>
-        Available Apartments:
+        {t("availableApartments")}
       </Typography>
       <Grid container spacing={4}>
-        {project.availableApartments.map((apartment, index) => (
-          <Grid item xs={12} sm={6} md={4} key={index}>
+        {relatedApartments.map((apartment) => (
+          <Grid item xs={12} sm={6} md={4} key={apartment.id}>
             <Card sx={{ borderRadius: "16px", overflow: "hidden", height: "100%" }}>
               <CardMedia
                 component="img"
-                image={apartment.image}
-                alt={apartment.title}
+                image={apartment.mainImage}
+                alt={apartment.title[language]}
                 sx={{ height: 200 }}
               />
               <CardContent>
                 <Typography variant="h6" sx={{ color: "#002D62" }}>
-                  {apartment.title}
+                  {apartment.title[language]}
                 </Typography>
                 <Typography variant="body1" sx={{ color: "#666666" }}>
-                  {apartment.description}
+                  {apartment.size} {t("projectArea")} | {apartment.floors} {t("floors")} | {apartment.beds} {t("projectBedrooms")} | {apartment.baths} {t("projectBathrooms")}
                 </Typography>
                 <Typography variant="body2" sx={{ color: "#F36F21" }}>
-                  starts form {apartment.price}
+                  {apartment.price[language]}
                 </Typography>
                 <Button
                   variant="outlined"
                   onClick={() =>
-                    navigate(
-                      `/projects/${projectId}/apartments/${apartment.id}`
-                    )
+                    navigate(`/projects/${projectId}/apartments/${apartment.id}`)
                   }
                   sx={{
                     marginTop: 2,
@@ -79,7 +71,7 @@ const ProjectDetailsPage = () => {
                     borderColor: "#002D62",
                   }}
                 >
-                  View Apartment
+                  {t("viewApartment")}
                 </Button>
               </CardContent>
             </Card>
