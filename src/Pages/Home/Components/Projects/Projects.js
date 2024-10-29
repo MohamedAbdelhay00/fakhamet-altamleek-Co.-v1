@@ -25,7 +25,14 @@ export default function ProjectsSection() {
     navigate("/projects");
   };
   return (
-    <Box sx={{ padding: "7.5% 5%", backgroundColor: "#FFFFFF", width: "100%", overflow: "hidden" }}>
+    <Box
+      sx={{
+        padding: "7.5% 5%",
+        backgroundColor: "#FFFFFF",
+        width: "100%",
+        overflow: "hidden",
+      }}
+    >
       <Grid container spacing={2}>
         {/* Title and Description */}
         <Grid item xs={12} md={6}>
@@ -33,7 +40,9 @@ export default function ProjectsSection() {
             variant="h4"
             sx={{
               fontWeight: 700,
-              fontFamily: isArabic ? "Cairo, sans-serif" : "Poppins, sans-serif",
+              fontFamily: isArabic
+                ? "Cairo, sans-serif"
+                : "Poppins, sans-serif",
               marginBottom: 2,
               color: "#002D62",
             }}
@@ -47,7 +56,9 @@ export default function ProjectsSection() {
               fontWeight: 400,
               color: "#555",
               maxWidth: "500px",
-              fontFamily: isArabic ? "Cairo, sans-serif" : "Open Sans, sans-serif",
+              fontFamily: isArabic
+                ? "Cairo, sans-serif"
+                : "Open Sans, sans-serif",
               marginBottom: 3,
             }}
           >
@@ -93,7 +104,9 @@ export default function ProjectsSection() {
                   <Typography
                     variant="h6"
                     sx={{
-                      fontFamily: isArabic ? "Cairo, sans-serif" : "Poppins, sans-serif",
+                      fontFamily: isArabic
+                        ? "Cairo, sans-serif"
+                        : "Poppins, sans-serif",
                       fontWeight: 700,
                       fontSize: "1.1rem",
                       marginBottom: "4px",
@@ -105,21 +118,36 @@ export default function ProjectsSection() {
                   <Button
                     variant="contained"
                     sx={{
-                      backgroundColor: "#F36F21", // Matches your primary accent color
+                      backgroundColor: "#F36F21",
                       color: "#FFFFFF",
-                      borderRadius: "50%",
+                      borderRadius: "30px",
                       padding: "8px",
-                      width: "50px",
+                      width: "200px",
                       height: "50px",
                       minWidth: "45px",
                       "&:hover": {
-                        backgroundColor: "#D45F1E ",
+                        backgroundColor: "#D45F1E",
                       },
-                      boxShadow: "0 4px 12px rgba(0, 0, 0, 0.2)", // Soft shadow for depth
+                      boxShadow: "0 4px 12px rgba(0, 0, 0, 0.2)",
                     }}
                     onClick={handleNavigate}
                   >
-                    <ArrowForwardIcon sx={{ fontSize: "1rem" }} />
+                    {/* Conditionally render icon based on language */}
+                    {isArabic ? (
+                      <>
+                        <ArrowForwardIcon
+                          sx={{ fontSize: "1rem", marginRight: "8px" }}
+                        />
+                        {"شاهد أحدث مشاريعنا "}
+                      </>
+                    ) : (
+                      <>
+                        {"Latest Projects"}
+                        <ArrowForwardIcon
+                          sx={{ fontSize: "1rem", marginLeft: "8px" }}
+                        />
+                      </>
+                    )}
                   </Button>
                 </Box>
                 <Box
@@ -131,12 +159,16 @@ export default function ProjectsSection() {
                   }}
                 >
                   <Box>
-                  <Typography
-                    variant="body2"
-                    sx={{ color: "#CCCCCC", fontSize: "0.85rem", width: "70%" }}
-                  >
-                    {t("projectAddress")}
-                  </Typography>
+                    <Typography
+                      variant="body2"
+                      sx={{
+                        color: "#CCCCCC",
+                        fontSize: "0.85rem",
+                        width: "70%",
+                      }}
+                    >
+                      {t("projectAddress")}
+                    </Typography>
                   </Box>
                   <Box
                     sx={{
@@ -149,7 +181,7 @@ export default function ProjectsSection() {
                     <Box
                       sx={{ display: "flex", alignItems: "center", gap: 0.5 }}
                     >
-                      <Typography>{t("projectArea")}</Typography>
+                      <Typography>201.5 {t("projectArea")}</Typography>
                     </Box>
                     <Divider
                       orientation="vertical"
@@ -159,7 +191,7 @@ export default function ProjectsSection() {
                     <Box
                       sx={{ display: "flex", alignItems: "center", gap: 0.5 }}
                     >
-                      <Typography>{t("projectBedrooms")}</Typography>
+                      <Typography>6 {t("projectBedrooms")}</Typography>
                     </Box>
                     <Divider
                       orientation="vertical"
@@ -169,7 +201,7 @@ export default function ProjectsSection() {
                     <Box
                       sx={{ display: "flex", alignItems: "center", gap: 0.5 }}
                     >
-                      <Typography>{t("projectBathrooms")}</Typography>
+                      <Typography>3 {t("projectBathrooms")}</Typography>
                     </Box>
                   </Box>
                 </Box>

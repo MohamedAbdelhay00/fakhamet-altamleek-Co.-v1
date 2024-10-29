@@ -1,0 +1,21 @@
+.dot-pattern {
+    position: relative;
+    z-index: 1; /* To position the dots behind the text */
+  }
+  
+  .dot-pattern::before {
+    content: "";
+    position: absolute;
+    top: -50px; /* Adjust to control vertical positioning */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Offset to precisely center horizontally */
+    width: 800px;
+    height: 200px;
+    background-image: radial-gradient(circle, rgba(0, 0, 0, 0.3) 2px, transparent 2px);
+    background-size: 30px 30px; /* Adjust the size of the dots */
+    z-index: -10; /* Make sure it stays behind the text */
+    opacity: 0.3;
+    border-radius: 30%;
+}
+
+  

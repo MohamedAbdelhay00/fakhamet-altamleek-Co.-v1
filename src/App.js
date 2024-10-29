@@ -7,6 +7,7 @@ import "./App.css";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Footer from "./Components/Footer/Footer";
+import ScrollToTop from "./Components/ScrollToTop/ScrollToTop";
 
 const AppContent = () => {
   const { i18n } = useTranslation();
@@ -23,6 +24,7 @@ const AppContent = () => {
   return (
     <div className="App" style={{ direction }}>
       <Navbar />
+      <ScrollToTop />
       <AppRoutes />
       <Footer />
     </div>

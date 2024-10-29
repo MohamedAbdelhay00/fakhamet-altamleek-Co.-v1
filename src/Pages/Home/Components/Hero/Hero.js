@@ -4,6 +4,7 @@ import bg from "../../../../assets/imgs/heroImg.png";
 import { useTranslation } from "react-i18next";
 import { keyframes } from "@mui/system";
 import i18n from "../../../../i18n";
+import { useNavigate } from "react-router-dom";
 
 const fadeIn = keyframes`
   from { opacity: 0; }
@@ -13,6 +14,10 @@ const fadeIn = keyframes`
 export default function Home() {
   const { t } = useTranslation();
   const isArabic = i18n.language === "ar";
+  const navigate = useNavigate();
+  const handleNavigate = () => {
+    navigate("/projects")
+  }
 
   const scrollToContact = () => {
     const contactSection = document.getElementById("contact-us");
@@ -119,7 +124,7 @@ export default function Home() {
                 backgroundColor: "#2A91D9",
               },
             }}
-            onClick={scrollToProjects}
+            onClick={handleNavigate}
           >
             {t("heroBtn2")}
           </Button>

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState, useMemo } from "react";
 import {
   Box,
   Grid,
@@ -8,18 +8,22 @@ import {
   Card,
   CardMedia,
   CardContent,
+  Slider,
+  Collapse,
+  IconButton,
   MenuItem,
 } from "@mui/material";
 import { Link } from "react-router-dom";
 import SearchIcon from "@mui/icons-material/Search";
 import ClearIcon from "@mui/icons-material/Clear";
+import FilterListIcon from "@mui/icons-material/FilterList";
 import projects from "../../../data/projects";
 import i18n from "../../../i18n";
 import rtlPlugin from "stylis-plugin-rtl";
 import { CacheProvider } from "@emotion/react";
 import createCache from "@emotion/cache";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-
+import './Project.css'
 const cacheRtl = createCache({
   key: "muirtl",
   stylisPlugins: [rtlPlugin],
@@ -41,14 +45,26 @@ const ltrTheme = createTheme({
 
 const ProjectsPage = () => {
   const [projectsData, setProjectsData] = useState([]);
-  const [filter, setFilter] = useState({ search: "", location: "", priceRange: "" });
+  const [filter, setFilter] = useState({ search: "", priceRange: [100000, 5000000], location: "" });
   const [filteredProjects, setFilteredProjects] = useState([]);
+  const [showFilters, setShowFilters] = useState(false);
   const language = i18n.language;
+  const filterRef = useRef(null);
   const isRtl = language === "ar";
 
   useEffect(() => {
     setProjectsData(projects);
     setFilteredProjects(projects);
+    const handleClickOutside = (event) => {
+      if (filterRef.current && !filterRef.current.contains(event.target)) {
+        setShowFilters(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
   }, []);
 
   const uniqueLocations = [...new Set(projects.map((project) => project.location[language]))];
@@ -59,194 +75,227 @@ const ProjectsPage = () => {
     applyFilters(updatedFilter);
   };
 
+  const handlePriceChange = (event, newValue) => {
+    const updatedFilter = { ...filter, priceRange: newValue };
+    setFilter(updatedFilter);
+    applyFilters(updatedFilter);
+  };
+
   const applyFilters = (filter) => {
     const filtered = projectsData.filter((project) => {
-      const projectPrice =
-        typeof project.price[language] === "string"
-          ? parseInt(project.price[language].replace(/\D/g, ""), 10)
-          : 0;
-
       const matchesSearch = filter.search
         ? project.title[language].toLowerCase().includes(filter.search.toLowerCase())
         : true;
+
+      const projectPrice = typeof project.price[language] === "string"
+        ? parseInt(project.price[language].replace(/\D/g, ""), 10)
+        : project.price;
+
+      const matchesPriceRange =
+        projectPrice >= filter.priceRange[0] && projectPrice <= filter.priceRange[1];
+
       const matchesLocation = filter.location
-        ? project.location[language].toLowerCase() === filter.location.toLowerCase()
+        ? project.location[language] === filter.location
         : true;
-      const matchesPriceRange = filter.priceRange
-        ? projectPrice <= parseInt(filter.priceRange.replace(/\D/g, ""), 10)
-        : true;
-      return matchesSearch && matchesLocation && matchesPriceRange;
+
+      return matchesSearch && matchesPriceRange && matchesLocation;
     });
+
     setFilteredProjects(filtered);
   };
 
   const handleClearFilters = () => {
-    setFilter({ search: "", location: "", priceRange: "" });
+    setFilter({ search: "", priceRange: [100000, 5000000], location: "" });
     setFilteredProjects(projectsData);
   };
 
-  const content = (
-    <Box
-      sx={{
-        padding: { xs: "25% 5%", md: "10% 5%" },
-        width: "100%",
-        overflow: "hidden",
-        direction: isRtl ? "rtl" : "ltr",
-        fontFamily: isRtl ? "Cairo, sans-serif" : "Poppins, sans-serif",
-      }}
-    >
-      {/* Hero Section */}
-      <Box sx={{ textAlign: "center", marginBottom: "4rem" }}>
-        <Typography variant="h3" sx={{ fontWeight: 700, color: "#002D62" }}>
-          {language === "en"
-            ? "Explore Our Real Estate Projects"
-            : "استكشف مشاريعنا العقارية"}
-        </Typography>
-        <Typography variant="body1" sx={{ color: "#555", marginTop: 2 }}>
-          {language === "en"
-            ? "Find the perfect property from our curated collection of luxurious real estate projects."
-            : "ابحث عن العقار المثالي من مجموعتنا المختارة من المشاريع العقارية الفاخرة."}
-        </Typography>
-      </Box>
+  const toggleFilterVisibility = () => {
+    setShowFilters(!showFilters);
+  };
 
-      {/* Filter/Search Bar */}
+  const content = (
+    <ThemeProvider theme={isRtl ? rtlTheme : ltrTheme}>
       <Box
         sx={{
-          display: "flex",
-          gap: 2,
-          justifyContent: "center",
-          marginBottom: "4rem",
-          flexWrap: "wrap",
+          padding: { xs: "25% 5%", md: "10% 5%" },
+          width: "100%",
+          overflow: "hidden",
         }}
       >
-        <TextField
-          label={language === "en" ? "Search Projects" : "بحث عن مشاريع"}
-          variant="outlined"
-          name="search"
-          value={filter.search}
-          onChange={handleFilterChange}
-          InputProps={{
-            endAdornment: isRtl ? null : <SearchIcon />,
-            startAdornment: isRtl ? <SearchIcon /> : null,
-            inputProps: {
-              style: { textAlign: isRtl ? "right" : "left" },
-            },
-          }}
-          sx={{ width: { xs: "100%", sm: "300px" } }}
-        />
-
-        <TextField
-          select
-          label={language === "en" ? "Location" : "الموقع"}
-          variant="outlined"
-          name="location"
-          value={filter.location}
-          onChange={handleFilterChange}
-          sx={{ width: { xs: "100%", sm: "200px" } }}
-        >
-          {uniqueLocations.map((location, index) => (
-            <MenuItem key={index} value={location}>
-              {location}
-            </MenuItem>
-          ))}
-        </TextField>
-
-        <TextField
-          label={language === "en" ? "Max Price (USD)" : "الحد الأقصى للسعر"}
-          variant="outlined"
-          name="priceRange"
-          value={filter.priceRange}
-          onChange={handleFilterChange}
-          sx={{ width: { xs: "100%", sm: "200px" } }}
-        />
-
-        <Button
-          variant="contained"
-          sx={{
-            backgroundColor: "#F36F21",
-            color: "#FFFFFF",
-            minWidth: "100px",
-            fontFamily: isRtl ? "Cairo, sans-serif" : "Poppins, sans-serif",
-          }}
-          onClick={handleClearFilters}
-          startIcon={<ClearIcon />}
-        >
-          {language === "en" ? "Clear" : "مسح"}
-        </Button>
-      </Box>
-
-      {/* Projects Grid */}
-      <Grid container spacing={4}>
-        {filteredProjects.length > 0 ? (
-          filteredProjects.map((project) => (
-            <Grid item xs={12} sm={6} md={3} key={project.id}>
-              <Card
-                sx={{
-                  borderRadius: "16px",
-                  overflow: "hidden",
-                  height: "100%",
-                  fontFamily: isRtl ? "Cairo, sans-serif" : "Poppins, sans-serif",
-                }}
-              >
-                <CardMedia
-                  component="img"
-                  image={project.image}
-                  alt={project.title[language]}
-                  sx={{ height: 200 }}
-                />
-                <CardContent>
-                  <Typography
-                    variant="h6"
-                    sx={{ fontWeight: 700, color: "#002D62" }}
-                  >
-                    {project.title[language]}
-                  </Typography>
-                  <Typography
-                    variant="body2"
-                    sx={{ color: "#555", marginTop: 1 }}
-                  >
-                    {project.location[language]}
-                  </Typography>
-                  <Typography
-                    variant="body2"
-                    sx={{ color: "#F36F21", marginTop: 1 }}
-                  >
-                    {project.price[language]}
-                  </Typography>
-                  <Button
-                    variant="outlined"
-                    component={Link}
-                    to={`/projects/${project.id}/apartments`}
-                    sx={{
-                      marginTop: 2,
-                      color: "#002D62",
-                      borderColor: "#002D62",
-                    }}
-                  >
-                    {language === "en" ? "View Details" : "عرض التفاصيل"}
-                  </Button>
-                </CardContent>
-              </Card>
-            </Grid>
-          ))
-        ) : (
-          <Typography
-            variant="h6"
-            sx={{ color: "#555", textAlign: "center", width: "100%" }}
-          >
-            {language === "en" ? "No projects found." : "لم يتم العثور على مشاريع."}
+        {/* Header Section */}
+        <Box className="dot-pattern" sx={{ textAlign: "center", marginBottom: "4rem" }}>
+          <Typography variant="h3" sx={{ fontWeight: 700, color: "#002D62" }}>
+            {language === "en"
+              ? "Explore Our Real Estate Projects"
+              : "استكشف مشاريعنا العقارية"}
           </Typography>
-        )}
-      </Grid>
-    </Box>
+          <Typography variant="body1" sx={{ color: "#555", marginTop: 2 }}>
+            {language === "en"
+              ? "Find the perfect property from our curated collection of luxurious real estate projects."
+              : "ابحث عن العقار المثالي من مجموعتنا المختارة من المشاريع العقارية الفاخرة."}
+          </Typography>
+        </Box>
+
+        {/* Search Input with Filter & Clear */}
+        <Box
+          sx={{
+            position: "relative",
+            width: { xs: "100%", sm: "400px" },
+            margin: "0 auto",
+          }}
+        >
+          <TextField
+            fullWidth
+            label={language === "en" ? "Search Projects" : "بحث عن مشاريع"}
+            variant="outlined"
+            name="search"
+            value={filter.search}
+            onChange={handleFilterChange}
+            InputProps={{
+              startAdornment: <SearchIcon sx={{ color: "#002D62", mr: 1 }} />,
+              endAdornment: (
+                <>
+                  <IconButton onClick={toggleFilterVisibility}>
+                    <FilterListIcon color="primary" />
+                  </IconButton>
+                  <IconButton onClick={handleClearFilters}>
+                    <ClearIcon color="error" />
+                  </IconButton>
+                </>
+              ),
+            }}
+            inputProps={{
+              style: { textAlign: language === "ar" ? "right" : "left" },
+              dir: language === "ar" ? "rtl" : "ltr", // Ensure placeholder is aligned in RTL
+            }}
+            sx={{ width: "100%" }}
+          />
+
+          {/* Filter Dropdown */}
+          <Collapse
+            in={showFilters}
+            timeout="auto"
+            unmountOnExit
+            sx={{ mt: 2 }}
+            ref={filterRef}
+          >
+            <Box
+              sx={{
+                p: 2,
+                border: "1px solid #ccc",
+                borderRadius: 2,
+                backgroundColor: "#f9f9f9",
+              }}
+            >
+              {/* Price Range Slider */}
+              <Typography sx={{ mb: 1 }}>
+                {language === "en" ? "Price Range (SAR)" : "نطاق السعر (ر.س)"}
+              </Typography>
+              <Slider
+                value={filter.priceRange}
+                onChange={handlePriceChange}
+                valueLabelDisplay="auto"
+                min={100000}
+                max={5000000}
+                sx={{ color: "#F36F21", mb: 2 }}
+              />
+
+              {/* Location Dropdown */}
+              <TextField
+                select
+                label={language === "en" ? "Location" : "الموقع"}
+                variant="outlined"
+                name="location"
+                value={filter.location}
+                onChange={handleFilterChange}
+                fullWidth
+                sx={{ mt: 2 }}
+              >
+                <MenuItem value="">
+                  {language === "en" ? "All Locations" : "كل المواقع"}
+                </MenuItem>
+                {uniqueLocations.map((location) => (
+                  <MenuItem key={location} value={location}>
+                    {location}
+                  </MenuItem>
+                ))}
+              </TextField>
+            </Box>
+          </Collapse>
+        </Box>
+
+        {/* Projects Grid */}
+        <Grid container spacing={4} sx={{ mt: 4 }}>
+          {filteredProjects.length > 0 ? (
+            filteredProjects.map((project) => (
+              <Grid item xs={12} sm={6} md={3} key={project.id}>
+                <Card
+                  sx={{
+                    borderRadius: "16px",
+                    overflow: "hidden",
+                    height: "100%",
+                  }}
+                >
+                  <CardMedia
+                    component="img"
+                    image={project.image}
+                    alt={project.title[language]}
+                    sx={{ height: 200 }}
+                  />
+                  <CardContent>
+                    <Typography
+                      variant="h6"
+                      sx={{ fontWeight: 700, color: "#002D62" }}
+                    >
+                      {project.title[language]}
+                    </Typography>
+                    <Typography
+                      variant="body2"
+                      sx={{ color: "#555", marginTop: 1 }}
+                    >
+                      {project.location[language]}
+                    </Typography>
+                    <Typography
+                      variant="body2"
+                      sx={{ color: "#F36F21", marginTop: 1 }}
+                    >
+                      {project.price[language]}
+                    </Typography>
+                    <Button
+                      variant="outlined"
+                      component={Link}
+                      to={`/projects/${project.id}/apartments`}
+                      sx={{
+                        marginTop: 2,
+                        color: "#002D62",
+                        borderColor: "#002D62",
+                      }}
+                    >
+                      {language === "en" ? "View Details" : "عرض التفاصيل"}
+                    </Button>
+                  </CardContent>
+                </Card>
+              </Grid>
+            ))
+          ) : (
+            <Typography
+              variant="h6"
+              sx={{ color: "#555", textAlign: "center", width: "100%" }}
+            >
+              {language === "en"
+                ? "No projects found."
+                : "لم يتم العثور على مشاريع."}
+            </Typography>
+          )}
+        </Grid>
+      </Box>
+    </ThemeProvider>
   );
 
-  return isRtl ? (
-    <CacheProvider value={cacheRtl}>
-      <ThemeProvider theme={rtlTheme}>{content}</ThemeProvider>
-    </CacheProvider>
+  return cacheRtl ? (
+    <CacheProvider value={cacheRtl}>{content}</CacheProvider>
   ) : (
-    <ThemeProvider theme={ltrTheme}>{content}</ThemeProvider>
+    content
   );
 };
 

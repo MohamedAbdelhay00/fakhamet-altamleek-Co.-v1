@@ -20,7 +20,7 @@ const ApartmentDetails = () => {
   }
 
   return (
-    <Box sx={{ padding: "10% 5%" }}>
+    <Box sx={{ padding: { xs: "25% 5%", md: "10% 5%"} }}>
       {/* Row 1 - Images */}
       <Grid container spacing={2}>
         <Grid item xs={12} md={6}>

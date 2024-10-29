@@ -19,7 +19,8 @@ import { useDirection } from "../../context/DirectionContext";
 import logo from "../../assets/imgs/cleaned_logo_smooth_high_quality.png";
 import whiteLogo from "../../assets/imgs/transparent_logo.png";
 import "./Navbar.module.css";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
+import ProjectDetailsPage from "../../Pages/Projects/Page/ProjectDetails";
 
 const Navbar = () => {
   const location = useLocation();
@@ -39,6 +40,7 @@ const isApartmentDetailsPage = /^\/projects\/[^/]+\/apartments\/[^/]+$/.test(
     linkColor: isProjectsPage ? "#002D62" : "#fff",
   });
 
+  const navigate = useNavigate();
   const [logoSrc, setLogoSrc] = useState(logo);
   const { t, i18n } = useTranslation();
   const { setDirection } = useDirection();
@@ -249,7 +251,16 @@ const isApartmentDetailsPage = /^\/projects\/[^/]+\/apartments\/[^/]+$/.test(
               width: { xs: "40px", md: "50px" },
               height: { xs: "40px", md: "50px" },
             }}
-            onClick={() => handleScroll("home")}
+            onClick={
+              !isProjectsPage &&
+              !isProjectDetailsPage &&
+              !isApartmentDetailsPage &&
+              !isNotFoundPage
+                ? () => {
+                    handleScroll("home");
+                  }
+                : () => navigate("/")
+            }
           >
             <img
               src={logoSrc}
@@ -264,7 +275,8 @@ const isApartmentDetailsPage = /^\/projects\/[^/]+\/apartments\/[^/]+$/.test(
               }}
             />
           </Box>
-          <Box
+          { !isProjectsPage && !isProjectDetailsPage && !isApartmentDetailsPage && !isNotFoundPage ? (
+            <Box
             sx={{
               display: { xs: "none", md: "flex" },
               flex: 3,
@@ -314,6 +326,7 @@ const isApartmentDetailsPage = /^\/projects\/[^/]+\/apartments\/[^/]+$/.test(
               )
             )}
           </Box>
+          ) : ("")}
           <Box
             sx={{
               display: "flex",
@@ -368,7 +381,7 @@ const isApartmentDetailsPage = /^\/projects\/[^/]+\/apartments\/[^/]+$/.test(
               onClick={handleDrawerToggle}
               sx={{
                 display: { md: "none" },
-                color: window.scrollY > 80 ? "#002D62" : "#fff",
+                color: window.scrollY > 80 || isProjectsPage || isProjectDetailsPage || isApartmentDetailsPage || isNotFoundPage ? "#002D62" : "#fff",
                 fontSize: "2rem",
               }}
             >

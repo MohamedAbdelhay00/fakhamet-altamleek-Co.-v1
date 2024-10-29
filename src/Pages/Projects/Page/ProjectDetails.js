@@ -26,8 +26,9 @@ const ProjectDetailsPage = () => {
   );
 
   return (
-    <Box sx={{ padding: "10% 5%", width: "100%", overflow: "hidden" }}>
+    <Box sx={{ padding: { xs: "25% 5%", md: "10% 5%"}, width: "100%", overflow: "hidden" }}>
       <Typography
+        className="dot-pattern"
         variant="h3"
         sx={{ fontWeight: 700, color: "#002D62", marginBottom: 2 }}
       >
@@ -43,7 +44,9 @@ const ProjectDetailsPage = () => {
       <Grid container spacing={4}>
         {relatedApartments.map((apartment) => (
           <Grid item xs={12} sm={6} md={4} key={apartment.id}>
-            <Card sx={{ borderRadius: "16px", overflow: "hidden", height: "100%" }}>
+            <Card
+              sx={{ borderRadius: "16px", overflow: "hidden", height: "100%" }}
+            >
               <CardMedia
                 component="img"
                 image={apartment.mainImage}
@@ -55,7 +58,9 @@ const ProjectDetailsPage = () => {
                   {apartment.title[language]}
                 </Typography>
                 <Typography variant="body1" sx={{ color: "#666666" }}>
-                  {apartment.size} {t("projectArea")} | {apartment.floors} {t("floors")} | {apartment.beds} {t("projectBedrooms")} | {apartment.baths} {t("projectBathrooms")}
+                  {apartment.size} {t("projectArea")} | {apartment.floors}{" "}
+                  {t("floors")} | {apartment.beds} {t("projectBedrooms")} |{" "}
+                  {apartment.baths} {t("projectBathrooms")}
                 </Typography>
                 <Typography variant="body2" sx={{ color: "#F36F21" }}>
                   {apartment.price[language]}
@@ -63,7 +68,9 @@ const ProjectDetailsPage = () => {
                 <Button
                   variant="outlined"
                   onClick={() =>
-                    navigate(`/projects/${projectId}/apartments/${apartment.id}`)
+                    navigate(
+                      `/projects/${projectId}/apartments/${apartment.id}`
+                    )
                   }
                   sx={{
                     marginTop: 2,
