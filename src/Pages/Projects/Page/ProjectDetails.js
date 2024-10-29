@@ -52,6 +52,7 @@ const ProjectDetailsPage = () => {
                 image={apartment.mainImage}
                 alt={apartment.title[language]}
                 sx={{ height: 200 }}
+                loading="lazy"
               />
               <CardContent>
                 <Typography variant="h6" sx={{ color: "#002D62" }}>

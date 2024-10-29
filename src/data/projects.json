@@ -5,7 +5,7 @@
     "location": { "en": "55 King Fahad Road, Jeddah, Saudi Arabia", "ar": "طريق الملك فهد 55، جدة، المملكة العربية السعودية" },
     "price": { "en": "Starts from 1,528,950 SAR", "ar": "تبدأ من 1,528,950 ريال سعودي" },
     "description": { "en": "A beautiful collection of luxury apartments in the heart of Jeddah.", "ar": "مجموعة جميلة من الشقق الفاخرة في قلب جدة." },
-    "image": "/assets/imgs/b1.png",
+    "image": "/assets/imgs/b1.jpg",
     "apartments": [1, 2, 3]
   },
   {
@@ -14,7 +14,7 @@
     "location": { "en": "22 Malik Street, Jeddah, Saudi Arabia", "ar": "شارع الملك 22، جدة، المملكة العربية السعودية" },
     "price": { "en": "Starts from 2,100,000 SAR", "ar": "تبدأ من 2,100,000 ريال سعودي" },
     "description": { "en": "Modern and stylish apartments in the busy city center.", "ar": "شقق حديثة وعصرية في وسط المدينة المزدحم." },
-    "image": "/assets/imgs/b2.png",
+    "image": "/assets/imgs/b2.jpg",
     "apartments": [4, 5]
   },
   {
@@ -41,7 +41,7 @@
     "location": { "en": "Tahliya Street, Jeddah, Saudi Arabia", "ar": "شارع التحلية، جدة، المملكة العربية السعودية" },
     "price": { "en": "Starts from 3,000,000 SAR", "ar": "تبدأ من 3,000,000 ريال سعودي" },
     "description": { "en": "Elite apartments for those who want to live in the lap of luxury.", "ar": "شقق النخبة لمن يريدون العيش برفاهية." },
-    "image": "/assets/imgs/b1.png",
+    "image": "/assets/imgs/b1.jpg",
     "apartments": [13, 14]
   },
   {
@@ -59,7 +59,7 @@
     "location": { "en": "Al Safa District, Jeddah, Saudi Arabia", "ar": "حي الصفا، جدة، المملكة العربية السعودية" },
     "price": { "en": "Starts from 950,000 SAR", "ar": "تبدأ من 950,000 ريال سعودي" },
     "description": { "en": "Garden apartments located in a peaceful residential area.", "ar": "شقق بحديقة تقع في منطقة سكنية هادئة." },
-    "image": "/assets/imgs/b2.png",
+    "image": "/assets/imgs/b2.jpg",
     "apartments": [18, 19, 20]
   }
 ]

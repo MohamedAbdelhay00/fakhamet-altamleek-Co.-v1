@@ -1,6 +1,6 @@
 import { Box, Button, Stack, Typography } from "@mui/material";
 import React from "react";
-import bg from "../../../../assets/imgs/heroImg.png";
+import bg from "../../../../assets/imgs/heroImg.jpg";
 import { useTranslation } from "react-i18next";
 import { keyframes } from "@mui/system";
 import i18n from "../../../../i18n";

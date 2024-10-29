@@ -1,6 +1,6 @@
 import { Box, Grid, Typography, Card, CardContent, Button } from "@mui/material";
 import React from "react";
-import heroImage from "../../../../assets/imgs/IMG_2356.png";
+import heroImage from "../../../../assets/imgs/IMG_2356.jpg";
 import i18n from "../../../../i18n";
 import { useTranslation } from "react-i18next";
 

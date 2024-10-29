@@ -29,6 +29,7 @@ const ApartmentDetails = () => {
             image={apartment.mainImage}
             alt="Main Image"
             sx={{ height: "100%", width: "100%", objectFit: "cover" }}
+            loading="lazy"
           />
         </Grid>
 
@@ -41,6 +42,7 @@ const ApartmentDetails = () => {
                   image={img}
                   alt={`Image ${index + 1}`}
                   sx={{ height: "250px", width: "100%", objectFit: "cover" }}
+                  loading="lazy"
                 />
               </Grid>
             ))}
@@ -53,6 +55,7 @@ const ApartmentDetails = () => {
             image={apartment.images[2] || apartment.mainImage} // Use the third image or fallback to main
             alt="Last Image"
             sx={{ height: "100%", width: "100%", objectFit: "cover" }}
+            loading="lazy"
           />
         </Grid>
       </Grid>

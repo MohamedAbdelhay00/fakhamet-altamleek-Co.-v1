@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, memo } from "react";
 import {
   AppBar,
   Toolbar,
@@ -415,4 +415,4 @@ const isApartmentDetailsPage = /^\/projects\/[^/]+\/apartments\/[^/]+$/.test(
   );
 };
 
-export default Navbar;
+export default memo(Navbar);

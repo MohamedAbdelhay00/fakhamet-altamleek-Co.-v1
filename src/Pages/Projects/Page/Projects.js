@@ -241,6 +241,7 @@ const ProjectsPage = () => {
                     image={project.image}
                     alt={project.title[language]}
                     sx={{ height: 200 }}
+                    loading="lazy"
                   />
                   <CardContent>
                     <Typography

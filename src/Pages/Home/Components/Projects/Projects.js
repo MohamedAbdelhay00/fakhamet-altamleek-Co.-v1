@@ -9,9 +9,9 @@ import {
   Divider,
 } from "@mui/material";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
-import property1 from "../../../../assets/imgs/b2.png";
+import property1 from "../../../../assets/imgs/b2.jpg";
 import property2 from "../../../../assets/imgs/b3.jpg";
-import property3 from "../../../../assets/imgs/b1.png";
+import property3 from "../../../../assets/imgs/b1.jpg";
 import property4 from "../../../../assets/imgs/b4.jpg";
 import i18n from "../../../../i18n";
 import { useTranslation } from "react-i18next";
@@ -83,6 +83,7 @@ export default function ProjectsSection() {
               image={property1}
               alt="Property"
               sx={{ objectFit: "cover" }}
+              loading="lazy"
             />
             <Box
               sx={{
@@ -229,6 +230,7 @@ export default function ProjectsSection() {
                   image={property2}
                   alt="Property"
                   sx={{ objectFit: "cover" }}
+                  loading="lazy"
                 />
               </Card>
             </Grid>
@@ -248,6 +250,7 @@ export default function ProjectsSection() {
                   image={property3}
                   alt="Property"
                   sx={{ objectFit: "cover" }}
+                  loading="lazy"
                 />
               </Card>
             </Grid>
@@ -266,6 +269,7 @@ export default function ProjectsSection() {
                   image={property4}
                   alt="Property"
                   sx={{ objectFit: "cover" }}
+                  loading="lazy"
                 />
               </Card>
             </Grid>

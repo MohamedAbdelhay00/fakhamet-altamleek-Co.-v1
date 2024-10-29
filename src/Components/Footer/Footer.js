@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { Box, Typography, Grid, TextField, Button, Divider, IconButton } from '@mui/material';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import FacebookIcon from '@mui/icons-material/Facebook';
@@ -6,7 +6,7 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 import { useTranslation } from 'react-i18next';
 import i18n from '../../i18n';
 
-export default function FooterSection() {
+const FooterSection = () => {
   const { t } = useTranslation();
   const isArabic = i18n.language === 'ar';
   return (
@@ -214,3 +214,5 @@ export default function FooterSection() {
     </Box>
   );
 }
+
+export default memo(FooterSection);

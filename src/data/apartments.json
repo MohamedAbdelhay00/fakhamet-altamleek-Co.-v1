@@ -9,8 +9,8 @@
     "baths": 5,
     "price": { "en": "1,528,950 SAR", "ar": "1,528,950 ريال سعودي" },
     "view": { "en": "Lake view | Mountain view", "ar": "إطلالة على البحيرة | إطلالة على الجبل" },
-    "mainImage": "/assets/imgs/b1.png",
-    "images": ["/assets/imgs/b2.png", "/assets/imgs/b3.jpg", "/assets/imgs/b4.jpg"],
+    "mainImage": "/assets/imgs/b1.jpg",
+    "images": ["/assets/imgs/b2.jpg", "/assets/imgs/b3.jpg", "/assets/imgs/b4.jpg"],
     "description": {
       "en": "Up for sale is a spacious home in Benevento, Italy, nestled in a picturesque setting.",
       "ar": "معروض للبيع منزل فسيح في بينيفينتو، إيطاليا، في موقع جميل."
@@ -26,8 +26,8 @@
     "baths": 2,
     "price": { "en": "1,200,000 SAR", "ar": "1,200,000 ريال سعودي" },
     "view": { "en": "City view", "ar": "إطلالة على المدينة" },
-    "mainImage": "/assets/imgs/b2.png",
-    "images": ["/assets/imgs/b1.png", "/assets/imgs/b3.jpg", "/assets/imgs/b4.jpg"],
+    "mainImage": "/assets/imgs/b2.jpg",
+    "images": ["/assets/imgs/b1.jpg", "/assets/imgs/b3.jpg", "/assets/imgs/b4.jpg"],
     "description": {
       "en": "This family apartment offers spacious living in the heart of the city.",
       "ar": "توفر هذه الشقة العائلية معيشة فسيحة في قلب المدينة."
@@ -44,7 +44,7 @@
     "price": { "en": "800,000 SAR", "ar": "800,000 ريال سعودي" },
     "view": { "en": "Garden view", "ar": "إطلالة على الحديقة" },
     "mainImage": "/assets/imgs/b3.jpg",
-    "images": ["/assets/imgs/b1.png", "/assets/imgs/b2.png", "/assets/imgs/b4.jpg"],
+    "images": ["/assets/imgs/b1.jpg", "/assets/imgs/b2.jpg", "/assets/imgs/b4.jpg"],
     "description": {
       "en": "A compact, modern studio perfect for urban living.",
       "ar": "استوديو حديث مدمج مثالي للمعيشة الحضرية."
@@ -61,7 +61,7 @@
     "price": { "en": "2,100,000 SAR", "ar": "2,100,000 ريال سعودي" },
     "view": { "en": "Sea view", "ar": "إطلالة على البحر" },
     "mainImage": "/assets/imgs/b4.jpg",
-    "images": ["/assets/imgs/b1.png", "/assets/imgs/b2.png", "/assets/imgs/b3.jpg"],
+    "images": ["/assets/imgs/b1.jpg", "/assets/imgs/b2.jpg", "/assets/imgs/b3.jpg"],
     "description": {
       "en": "Experience luxury living with a private pool and sea view.",
       "ar": "عيش حياة فاخرة مع حمام سباحة خاص وإطلالة على البحر."
@@ -77,8 +77,8 @@
     "baths": 1,
     "price": { "en": "500,000 SAR", "ar": "500,000 ريال سعودي" },
     "view": { "en": "Garden view", "ar": "إطلالة على الحديقة" },
-    "mainImage": "/assets/imgs/b1.png",
-    "images": ["/assets/imgs/b2.png", "/assets/imgs/b3.jpg", "/assets/imgs/b4.jpg"],
+    "mainImage": "/assets/imgs/b1.jpg",
+    "images": ["/assets/imgs/b2.jpg", "/assets/imgs/b3.jpg", "/assets/imgs/b4.jpg"],
     "description": {
       "en": "A small, cozy studio with a relaxing garden view.",
       "ar": "استوديو صغير ومريح مع إطلالة مريحة على الحديقة."
@@ -94,8 +94,8 @@
     "baths": 3,
     "price": { "en": "2,800,000 SAR", "ar": "2,800,000 ريال سعودي" },
     "view": { "en": "Sea view", "ar": "إطلالة على البحر" },
-    "mainImage": "/assets/imgs/b2.png",
-    "images": ["/assets/imgs/b1.png", "/assets/imgs/b3.jpg", "/assets/imgs/b4.jpg"],
+    "mainImage": "/assets/imgs/b2.jpg",
+    "images": ["/assets/imgs/b1.jpg", "/assets/imgs/b3.jpg", "/assets/imgs/b4.jpg"],
     "description": {
       "en": "An exclusive penthouse offering a stunning sea view.",
       "ar": "بنتهاوس حصري يقدم إطلالة مذهلة على البحر."
@@ -112,7 +112,7 @@
     "price": { "en": "2,000,000 SAR", "ar": "2,000,000 ريال سعودي" },
     "view": { "en": "Sea view", "ar": "إطلالة على البحر" },
     "mainImage": "/assets/imgs/b3.jpg",
-    "images": ["/assets/imgs/b1.png", "/assets/imgs/b2.png", "/assets/imgs/b4.jpg"],
+    "images": ["/assets/imgs/b1.jpg", "/assets/imgs/b2.jpg", "/assets/imgs/b4.jpg"],
     "description": {
       "en": "Luxurious living right by the seaside with modern amenities.",
       "ar": "حياة فاخرة على البحر مع وسائل الراحة الحديثة."
@@ -129,7 +129,7 @@
     "price": { "en": "1,500,000 SAR", "ar": "1,500,000 ريال سعودي" },
     "view": { "en": "City view", "ar": "إطلالة على المدينة" },
     "mainImage": "/assets/imgs/b4.jpg",
-    "images": ["/assets/imgs/b1.png", "/assets/imgs/b2.png", "/assets/imgs/b3.jpg"],
+    "images": ["/assets/imgs/b1.jpg", "/assets/imgs/b2.jpg", "/assets/imgs/b3.jpg"],
     "description": {
       "en": "A sleek, modern apartment located in the city center.",
       "ar": "شقة أنيقة وحديثة تقع في وسط المدينة."
@@ -145,8 +145,8 @@
     "baths": 3,
     "price": { "en": "1,700,000 SAR", "ar": "1,700,000 ريال سعودي" },
     "view": { "en": "Downtown view", "ar": "إطلالة على وسط المدينة" },
-    "mainImage": "/assets/imgs/b1.png",
-    "images": ["/assets/imgs/b2.png", "/assets/imgs/b3.jpg", "/assets/imgs/b4.jpg"],
+    "mainImage": "/assets/imgs/b1.jpg",
+    "images": ["/assets/imgs/b2.jpg", "/assets/imgs/b3.jpg", "/assets/imgs/b4.jpg"],
     "description": {
       "en": "A luxury suite with a perfect downtown view and spacious rooms.",
       "ar": "جناح فاخر مع إطلالة رائعة على وسط المدينة وغرف فسيحة."
@@ -162,8 +162,8 @@
     "baths": 4,
     "price": { "en": "2,200,000 SAR", "ar": "2,200,000 ريال سعودي" },
     "view": { "en": "City view", "ar": "إطلالة على المدينة" },
-    "mainImage": "/assets/imgs/b2.png",
-    "images": ["/assets/imgs/b1.png", "/assets/imgs/b3.jpg", "/assets/imgs/b4.jpg"],
+    "mainImage": "/assets/imgs/b2.jpg",
+    "images": ["/assets/imgs/b1.jpg", "/assets/imgs/b3.jpg", "/assets/imgs/b4.jpg"],
     "description": {
       "en": "Elegant penthouse with a wide city view, perfect for luxury living.",
       "ar": "بنتهاوس أنيق مع إطلالة واسعة على المدينة، مثالي للحياة الفاخرة."
@@ -180,7 +180,7 @@
       "price": { "en": "750,000 SAR", "ar": "750,000 ريال سعودي" },
       "view": { "en": "City view", "ar": "إطلالة على المدينة" },
       "mainImage": "/assets/imgs/b3.jpg",
-      "images": ["/assets/imgs/b1.png", "/assets/imgs/b2.png", "/assets/imgs/b4.jpg"],
+      "images": ["/assets/imgs/b1.jpg", "/assets/imgs/b2.jpg", "/assets/imgs/b4.jpg"],
       "description": {
         "en": "A compact studio apartment with a prime downtown location.",
         "ar": "شقة استوديو مدمجة في موقع مميز بوسط المدينة."
@@ -197,7 +197,7 @@
       "price": { "en": "1,800,000 SAR", "ar": "1,800,000 ريال سعودي" },
       "view": { "en": "Downtown view", "ar": "إطلالة على وسط المدينة" },
       "mainImage": "/assets/imgs/b4.jpg",
-      "images": ["/assets/imgs/b1.png", "/assets/imgs/b2.png", "/assets/imgs/b3.jpg"],
+      "images": ["/assets/imgs/b1.jpg", "/assets/imgs/b2.jpg", "/assets/imgs/b3.jpg"],
       "description": {
         "en": "Spacious deluxe apartment with luxurious amenities in downtown.",
         "ar": "شقة ديلوكس فسيحة مع وسائل راحة فاخرة في وسط المدينة."
@@ -213,8 +213,8 @@
       "baths": 4,
       "price": { "en": "3,000,000 SAR", "ar": "3,000,000 ريال سعودي" },
       "view": { "en": "Luxury city view", "ar": "إطلالة فاخرة على المدينة" },
-      "mainImage": "/assets/imgs/b1.png",
-      "images": ["/assets/imgs/b2.png", "/assets/imgs/b3.jpg", "/assets/imgs/b4.jpg"],
+      "mainImage": "/assets/imgs/b1.jpg",
+      "images": ["/assets/imgs/b2.jpg", "/assets/imgs/b3.jpg", "/assets/imgs/b4.jpg"],
       "description": {
         "en": "An elite penthouse with expansive city views and premium features.",
         "ar": "بنتهاوس النخبة مع إطلالات شاسعة على المدينة وميزات فاخرة."
@@ -230,8 +230,8 @@
       "baths": 2,
       "price": { "en": "1,200,000 SAR", "ar": "1,200,000 ريال سعودي" },
       "view": { "en": "Luxury view", "ar": "إطلالة فاخرة" },
-      "mainImage": "/assets/imgs/b2.png",
-      "images": ["/assets/imgs/b1.png", "/assets/imgs/b3.jpg", "/assets/imgs/b4.jpg"],
+      "mainImage": "/assets/imgs/b2.jpg",
+      "images": ["/assets/imgs/b1.jpg", "/assets/imgs/b3.jpg", "/assets/imgs/b4.jpg"],
       "description": {
         "en": "Deluxe apartment with luxury finishes and a great view.",
         "ar": "شقة ديلوكس مع تشطيبات فاخرة وإطلالة رائعة."
@@ -248,7 +248,7 @@
       "price": { "en": "1,900,000 SAR", "ar": "1,900,000 ريال سعودي" },
       "view": { "en": "Marina view", "ar": "إطلالة على المارينا" },
       "mainImage": "/assets/imgs/b3.jpg",
-      "images": ["/assets/imgs/b1.png", "/assets/imgs/b2.png", "/assets/imgs/b4.jpg"],
+      "images": ["/assets/imgs/b1.jpg", "/assets/imgs/b2.jpg", "/assets/imgs/b4.jpg"],
       "description": {
         "en": "Enjoy breathtaking marina views from this spacious apartment.",
         "ar": "استمتع بإطلالات خلابة على المارينا من هذه الشقة الفسيحة."
@@ -265,7 +265,7 @@
       "price": { "en": "2,500,000 SAR", "ar": "2,500,000 ريال سعودي" },
       "view": { "en": "Marina view", "ar": "إطلالة على المارينا" },
       "mainImage": "/assets/imgs/b4.jpg",
-      "images": ["/assets/imgs/b1.png", "/assets/imgs/b2.png", "/assets/imgs/b3.jpg"],
+      "images": ["/assets/imgs/b1.jpg", "/assets/imgs/b2.jpg", "/assets/imgs/b3.jpg"],
       "description": {
         "en": "An exceptional waterfront suite with luxurious amenities.",
         "ar": "جناح فاخر على الواجهة المائية مع وسائل راحة فاخرة."
@@ -281,8 +281,8 @@
       "baths": 1,
       "price": { "en": "900,000 SAR", "ar": "900,000 ريال سعودي" },
       "view": { "en": "Sea view", "ar": "إطلالة على البحر" },
-      "mainImage": "/assets/imgs/b1.png",
-      "images": ["/assets/imgs/b2.png", "/assets/imgs/b3.jpg", "/assets/imgs/b4.jpg"],
+      "mainImage": "/assets/imgs/b1.jpg",
+      "images": ["/assets/imgs/b2.jpg", "/assets/imgs/b3.jpg", "/assets/imgs/b4.jpg"],
       "description": {
         "en": "A cozy studio by the seaside, perfect for relaxation.",
         "ar": "استوديو مريح على البحر، مثالي للاسترخاء."
@@ -298,8 +298,8 @@
       "baths": 2,
       "price": { "en": "950,000 SAR", "ar": "950,000 ريال سعودي" },
       "view": { "en": "Garden view", "ar": "إطلالة على الحديقة" },
-      "mainImage": "/assets/imgs/b2.png",
-      "images": ["/assets/imgs/b1.png", "/assets/imgs/b3.jpg", "/assets/imgs/b4.jpg"],
+      "mainImage": "/assets/imgs/b2.jpg",
+      "images": ["/assets/imgs/b1.jpg", "/assets/imgs/b3.jpg", "/assets/imgs/b4.jpg"],
       "description": {
         "en": "Experience city living with a touch of nature in this garden apartment.",
         "ar": "استمتع بالعيش في المدينة مع لمسة من الطبيعة في هذه الشقة بحديقة."
@@ -316,7 +316,7 @@
       "price": { "en": "850,000 SAR", "ar": "850,000 ريال سعودي" },
       "view": { "en": "Garden view", "ar": "إطلالة على الحديقة" },
       "mainImage": "/assets/imgs/b3.jpg",
-      "images": ["/assets/imgs/b1.png", "/assets/imgs/b2.png", "/assets/imgs/b4.jpg"],
+      "images": ["/assets/imgs/b1.jpg", "/assets/imgs/b2.jpg", "/assets/imgs/b4.jpg"],
       "description": {
         "en": "A modern garden apartment with a spacious layout and cozy design.",
         "ar": "شقة حديثة بحديقة مع تصميم واسع ومريح."
@@ -333,7 +333,7 @@
       "price": { "en": "1,500,000 SAR", "ar": "1,500,000 ريال سعودي" },
       "view": { "en": "Garden and city view", "ar": "إطلالة على الحديقة والمدينة" },
       "mainImage": "/assets/imgs/b4.jpg",
-      "images": ["/assets/imgs/b1.png", "/assets/imgs/b2.png", "/assets/imgs/b3.jpg"],
+      "images": ["/assets/imgs/b1.jpg", "/assets/imgs/b2.jpg", "/assets/imgs/b3.jpg"],
       "description": {
         "en": "A luxurious penthouse with a garden view and cityscape backdrop.",
         "ar": "بنتهاوس فاخر مع إطلالة على الحديقة وواجهة المدينة."
