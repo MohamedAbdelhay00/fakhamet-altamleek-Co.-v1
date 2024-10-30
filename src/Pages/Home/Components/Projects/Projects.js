@@ -9,10 +9,10 @@ import {
   Divider,
 } from "@mui/material";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
-import property1 from "../../../../assets/imgs/b2.jpg";
-import property2 from "../../../../assets/imgs/b3.jpg";
-import property3 from "../../../../assets/imgs/b1.jpg";
-import property4 from "../../../../assets/imgs/b4.jpg";
+import property1 from "../../../../assets/imgs/outside-frontview.jpg";
+import property2 from "../../../../assets/imgs/Building-sideveiw.jpg";
+import property3 from "../../../../assets/imgs/roofView.jpg";
+import property4 from "../../../../assets/imgs/IMG_3441.jpg";
 import i18n from "../../../../i18n";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
@@ -75,6 +75,7 @@ export default function ProjectsSection() {
               overflow: "hidden",
               boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)",
               height: { xs: "300px", md: "100%" }, // Adjust height for mobile view
+              maxHeight: "700px"
             }}
           >
             <CardMedia
@@ -222,6 +223,7 @@ export default function ProjectsSection() {
                   overflow: "hidden",
                   boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)",
                   height: { xs: "200px", md: "100%" },
+                  maxHeight: "350px"
                 }}
               >
                 <CardMedia
@@ -242,6 +244,7 @@ export default function ProjectsSection() {
                   overflow: "hidden",
                   boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)",
                   height: { xs: "150px", md: "100%" },
+                  maxHeight: "330px"
                 }}
               >
                 <CardMedia
@@ -261,6 +264,7 @@ export default function ProjectsSection() {
                   overflow: "hidden",
                   boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)",
                   height: { xs: "150px", md: "100%" },
+                  maxHeight: "330px"
                 }}
               >
                 <CardMedia

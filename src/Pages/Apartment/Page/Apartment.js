@@ -28,7 +28,7 @@ const ApartmentDetails = () => {
             component="img"
             image={apartment.mainImage}
             alt="Main Image"
-            sx={{ height: "100%", width: "100%", objectFit: "cover" }}
+            sx={{ height: "100%", width: "100%", objectFit: "cover", maxHeight: "515px" }}
             loading="lazy"
           />
         </Grid>
