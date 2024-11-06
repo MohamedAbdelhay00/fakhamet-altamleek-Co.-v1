@@ -59,22 +59,22 @@
     "subTitle": "Discover heartfelt accounts of joy and fulfillment as our valued clients embark on the quest for their dream homes and prime investments.",
     "testimonials": [
       {
-        "name": "Louis Padtrige",
+        "name": "Abdullah Al-Otaibi",
         "testimonial": "Choosing this real estate service was the best decision I ever made. Their team demonstrated exceptional professionalism and expertise. I highly recommend their services to anyone!",
         "rating": 5
       },
       {
-        "name": "Rachel Hadid",
+        "name": "Sara Al-Fayez",
         "testimonial": "Their expert negotiation skills helped me sell my property at a great price in no time. I would definitely work with them again.",
         "rating": 5
       },
       {
-        "name": "Anastasia Baldwin",
+        "name": "Noura Al-Mutairi",
         "testimonial": "They patiently answered all our questions, provided valuable insights, and helped us secure our dream home within our budget.",
         "rating": 4
       },
       {
-        "name": "Harry Jenda",
+        "name": "Fahad Al-Qahtani",
         "testimonial": "They presented us with a stunning selection of homes that perfectly matched our preferences. The team's attention to detail and in-depth knowledge of the local market truly impressed us!",
         "rating": 5
       }
@@ -112,6 +112,9 @@
     "companyDescription": "A cutting-edge real estate agent that offers a seamless and immersive experience for finding your dream home.",
     "emailPlaceholder": "Write your email here",
     "emailSubmit": "Submit",
+    "emailInvalid": "Please enter a valid email address.",
+    "emailSuccessMessage": "Successfully subscribed!",
+    "emailErrorMessage": "Failed to subscribe. Please try again later.",
     "links": {
       "home": "Home",
       "aboutUs": "About Us",

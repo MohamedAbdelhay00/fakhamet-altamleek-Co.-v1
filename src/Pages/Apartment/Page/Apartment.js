@@ -85,7 +85,7 @@ const ApartmentDetails = () => {
         <Grid item xs={12} md={6}>
           <Box sx={{ width: "100%" }}>
             <Typography variant="h4" sx={{ color: "#555" }}>
-              {apartment.size} | {apartment.floors} {language === "ar" ? "طوابق" : "floors"} |{" "}
+              {apartment.size} {language === "ar" ? "²م" : "m²"} | {apartment.floors} {language === "ar" ? "طوابق" : "floors"} |{" "}
               {apartment.beds} {language === "ar" ? "غرف نوم" : "beds"} | {apartment.baths}{" "}
               {language === "ar" ? "حمامات" : "baths"}
             </Typography>

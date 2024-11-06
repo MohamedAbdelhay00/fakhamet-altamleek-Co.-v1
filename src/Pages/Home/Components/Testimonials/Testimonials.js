@@ -2,10 +2,10 @@ import React from "react";
 import { Box, Grid, Typography, Card, Avatar } from "@mui/material";
 import StarIcon from "@mui/icons-material/Star";
 import FormatQuoteIcon from "@mui/icons-material/FormatQuote";
-import user1 from "../../../../assets/imgs/client1.jpg"; // Replace with real images
-import user2 from "../../../../assets/imgs/client3.jpg";
-import user3 from "../../../../assets/imgs/client2.jpg";
-import user4 from "../../../../assets/imgs/client4.jpg";
+import user1 from "../../../../assets/imgs/c1.jpg"; // Replace with real images
+import user2 from "../../../../assets/imgs/c2.jpg";
+import user3 from "../../../../assets/imgs/c3.jpg";
+import user4 from "../../../../assets/imgs/c4.jpg";
 import { useTranslation } from "react-i18next";
 import i18n from "../../../../i18n";
 
@@ -14,30 +14,18 @@ export default function TestimonialsSection() {
   const isArabic = i18n.language === "ar";
   const testimonials = [
     {
-      name: "Louis Padtrige",
-      testimonial:
-        "Choosing this real estate service was the best decision I ever made. Their team demonstrated exceptional professionalism and expertise. I highly recommend their services to anyone!",
       image: user3,
       rating: 5,
     },
     {
-      name: "Rachel Hadid",
-      testimonial:
-        "Their expert negotiation skills helped me sell my property at a great price in no time. I would definitely work with them again.",
       image: user2,
       rating: 5,
     },
     {
-      name: "Anastasia Baldwin",
-      testimonial:
-        "They patiently answered all our questions, provided valuable insights, and helped us secure our dream home within our budget.",
       image: user4,
       rating: 4,
     },
     {
-      name: "Harry Jenda",
-      testimonial:
-        "They presented us with a stunning selection of homes that perfectly matched our preferences. The team's attention to detail and in-depth knowledge of the local market truly impressed us!",
       image: user1,
       rating: 5,
     },
