@@ -33,7 +33,7 @@ const AppContent = () => {
 
 const App = () => (
   <DirectionProvider>
-    <ToastContainer />
+    <ToastContainer position="top-right" autoClose={5000} />
     <AppContent />
   </DirectionProvider>
 );
