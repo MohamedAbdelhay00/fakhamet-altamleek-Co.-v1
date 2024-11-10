@@ -157,8 +157,10 @@ const isApartmentDetailsPage = /^\/projects\/[^/]+\/apartments\/[^/]+$/.test(
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
-      <Box onClick={() => navigate("/")
-            } sx={{ padding: "16px", display: "flex", alignItems: "center" }}>
+      <Box
+        onClick={() => navigate("/")}
+        sx={{ padding: "16px", display: "flex", alignItems: "center" }}
+      >
         <img
           src={whiteLogo}
           alt="Logo"
@@ -169,70 +171,110 @@ const isApartmentDetailsPage = /^\/projects\/[^/]+\/apartments\/[^/]+$/.test(
         </Typography>
       </Box>
 
-      { !isProjectsPage && !isProjectDetailsPage && !isApartmentDetailsPage && !isNotFoundPage ? <List
-        sx={{
-          fontSize: "1rem",
-          fontWeight: "500",
-          color: "#002D62",
-        }}
-      >
-        <ListItem
-          disabled={isNotFoundPage}
-          button
-          onClick={() => handleScroll("home")}
+      {!isProjectsPage &&
+      !isProjectDetailsPage &&
+      !isApartmentDetailsPage &&
+      !isNotFoundPage ? (
+        <List
+          sx={{
+            fontSize: "1rem",
+            fontWeight: "500",
+            color: "#002D62",
+          }}
         >
-          <ListItemText primary={t("home")} />
-        </ListItem>
-        <Divider />
-        <ListItem
-          disabled={isNotFoundPage}
-          button
-          onClick={() => handleScroll("about-us")}
+          <ListItem
+            disabled={isNotFoundPage}
+            button
+            onClick={() => handleScroll("home")}
+            sx={{
+              textAlign: isArabic ? "right" : "left", // Aligns the text based on the language direction
+            }}
+          >
+            <ListItemText primary={t("home")} />
+          </ListItem>
+          <Divider />
+          <ListItem
+            disabled={isNotFoundPage}
+            button
+            onClick={() => handleScroll("about-us")}
+            sx={{
+              textAlign: isArabic ? "right" : "left", // Aligns the text based on the language direction
+            }}
+          >
+            <ListItemText primary={t("about-us")} />
+          </ListItem>
+          <Divider />
+          <ListItem
+            disabled={isNotFoundPage}
+            button
+            onClick={() => handleScroll("projects")}
+            sx={{
+              textAlign: isArabic ? "right" : "left", // Aligns the text based on the language direction
+            }}
+          >
+            <ListItemText primary={t("projects")} />
+          </ListItem>
+          <Divider />
+          <ListItem
+            disabled={isNotFoundPage}
+            button
+            onClick={() => handleScroll("services")}
+            sx={{
+              textAlign: isArabic ? "right" : "left", // Aligns the text based on the language direction
+            }}
+          >
+            <ListItemText primary={t("services")} />
+          </ListItem>
+          <Divider />
+          <ListItem
+            disabled={isNotFoundPage}
+            button
+            onClick={() => handleScroll("testimonials")}
+            sx={{
+              textAlign: isArabic ? "right" : "left", // Aligns the text based on the language direction
+            }}
+          >
+            <ListItemText primary={t("testimonials")} />
+          </ListItem>
+          <Divider />
+          <ListItem
+            button
+            onClick={changeLanguage}
+            sx={{
+              display: "flex",
+              justifyContent: "flex-end", // Aligns the content based on the language direction
+              flexDirection: "row", // Ensures icon and text layout match the language direction
+              textAlign: isArabic ? "right" : "left",
+            }}
+          >
+            <LanguageIcon />
+            <ListItemText primary={i18n.language === "en" ? "AR" : "EN"} />
+          </ListItem>
+        </List>
+      ) : (
+        <List
+          sx={{
+            fontSize: "1rem",
+            fontWeight: "500",
+            color: "#002D62",
+          }}
         >
-          <ListItemText primary={t("about-us")} />
-        </ListItem>
-        <Divider />
-        <ListItem
-          disabled={isNotFoundPage}
-          button
-          onClick={() => handleScroll("projects")}
-        >
-          <ListItemText primary={t("projects")} />
-        </ListItem>
-        <Divider />
-        <ListItem
-          disabled={isNotFoundPage}
-          button
-          onClick={() => handleScroll("services")}
-        >
-          <ListItemText primary={t("services")} />
-        </ListItem>
-        <Divider />
-        <ListItem
-          disabled={isNotFoundPage}
-          button
-          onClick={() => handleScroll("testimonials")}
-        >
-          <ListItemText primary={t("testimonials")} />
-        </ListItem>
-        <Divider />
-        <ListItem button onClick={changeLanguage}>
-          <LanguageIcon />
-          <ListItemText primary={i18n.language === "en" ? "AR" : "EN"} />
-        </ListItem>
-      </List> : <List
-        sx={{
-          fontSize: "1rem",
-          fontWeight: "500",
-          color: "#002D62",
-        }}
-      >
-        <Divider />
-        <ListItem button onClick={changeLanguage}>
-          <LanguageIcon />
-          <ListItemText primary={i18n.language === "en" ? "AR" : "EN"} />
-        </ListItem>
-      </List> }
+          <Divider />
+          <ListItem
+            button
+            onClick={changeLanguage}
+            sx={{
+              display: "flex",
+              justifyContent:
+                i18n.language === "en" ? "flex-start" : "flex-end", // Aligns the content based on the language direction
+              flexDirection: i18n.language === "en" ? "row" : "row-reverse", // Ensures icon and text layout match the language direction
+            }}
+          >
+            <LanguageIcon />
+            <ListItemText primary={i18n.language === "en" ? "AR" : "EN"} />
+          </ListItem>
+        </List>
+      )}
     </Box>
   );
 
