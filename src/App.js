@@ -8,6 +8,7 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Footer from "./Components/Footer/Footer";
 import ScrollToTop from "./Components/ScrollToTop/ScrollToTop";
+import { useMediaQuery } from '@mui/material';
 
 const AppContent = () => {
   const { i18n } = useTranslation();
@@ -31,11 +32,16 @@ const AppContent = () => {
   );
 };
 
-const App = () => (
+const App = () => {
+  const isMobile = useMediaQuery('(max-width:960px)');
+  return (
   <DirectionProvider>
-    <ToastContainer position="top-right" autoClose={5000} />
+    <ToastContainer
+      position={isMobile ? 'bottom-center' : 'bottom-right'}
+      autoClose={5000}
+    />
     <AppContent />
   </DirectionProvider>
-);
+)};
 
 export default App;
