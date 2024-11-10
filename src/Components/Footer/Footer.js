@@ -8,13 +8,21 @@ import i18n from '../../i18n';
 import emailjs from 'emailjs-com';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const FooterSection = () => {
   const { t } = useTranslation();
   const isArabic = i18n.language === 'ar';
   const [email, setEmail] = useState('');
   const [emailError, setEmailError] = useState('');
-
+  const location = useLocation();
+  const isProjectsPage = location.pathname === "/projects";
+  const isProjectDetailsPage = /^\/projects\/[^/]+\/apartments$/.test(location.pathname);
+const isApartmentDetailsPage = /^\/projects\/[^/]+\/apartments\/[^/]+$/.test(
+  location.pathname
+);
+  const isNotFoundPage = location.pathname === "/not-found";
+  const navigate = useNavigate();
   const handleScroll = (id) => {
     const element = document.getElementById(id);
     const navbar = document.querySelector("header");
@@ -27,6 +35,10 @@ const FooterSection = () => {
         behavior: "smooth",
       });
     }
+  };
+
+  const navigateToHome = () => {
+    navigate('/');
   };
 
   // Email validation function
@@ -48,10 +60,10 @@ const FooterSection = () => {
 
     emailjs
       .send(
-        "YOUR_SERVICE_ID", // Replace with your Email.js Service ID
-        "YOUR_TEMPLATE_ID", // Replace with the new Email.js Template ID for footer
+        "service_gzuxog9", // Replace with your Email.js Service ID
+        "template_2od20os", // Replace with the new Email.js Template ID for footer
         { email },
-        "YOUR_USER_ID" // Replace with your Email.js User ID
+        "SZaJDhfaCuwulqhPd" // Replace with your Email.js User ID
       )
       .then((response) => {
         toast.success(t('footerSection.emailSuccessMessage'));
@@ -123,7 +135,14 @@ const FooterSection = () => {
                 ? "Cairo, sans-serif"
                 : "Poppins, sans-serif",
             }}
-            onClick={() => handleScroll("about-us")}
+            onClick={() => {
+              !isProjectsPage &&
+              !isProjectDetailsPage &&
+              !isApartmentDetailsPage &&
+              !isNotFoundPage
+                ? handleScroll("about-us")
+                : navigateToHome();
+            }}
           >
             {t("footerSection.links.aboutUs")}
           </Button>

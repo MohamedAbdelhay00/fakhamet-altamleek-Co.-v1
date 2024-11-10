@@ -20,7 +20,6 @@ import logo from "../../assets/imgs/cleaned_logo_smooth_high_quality.png";
 import whiteLogo from "../../assets/imgs/transparent_logo.png";
 import "./Navbar.module.css";
 import { useLocation, useNavigate } from "react-router-dom";
-import ProjectDetailsPage from "../../Pages/Projects/Page/ProjectDetails";
 
 const Navbar = () => {
   const location = useLocation();
@@ -74,6 +73,11 @@ const isApartmentDetailsPage = /^\/projects\/[^/]+\/apartments\/[^/]+$/.test(
       });
     }
   };
+
+  const navigateToHome = () => {
+    navigate('/');
+  };
+
 
   useEffect(() => {
     if (isProjectsPage || isProjectDetailsPage || isApartmentDetailsPage) {
@@ -153,7 +157,8 @@ const isApartmentDetailsPage = /^\/projects\/[^/]+\/apartments\/[^/]+$/.test(
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
-      <Box sx={{ padding: "16px", display: "flex", alignItems: "center" }}>
+      <Box onClick={() => navigate("/")
+            } sx={{ padding: "16px", display: "flex", alignItems: "center" }}>
         <img
           src={whiteLogo}
           alt="Logo"
@@ -164,7 +169,7 @@ const isApartmentDetailsPage = /^\/projects\/[^/]+\/apartments\/[^/]+$/.test(
         </Typography>
       </Box>
 
-      <List
+      { !isProjectsPage && !isProjectDetailsPage && !isApartmentDetailsPage && !isNotFoundPage ? <List
         sx={{
           fontSize: "1rem",
           fontWeight: "500",
@@ -215,7 +220,19 @@ const isApartmentDetailsPage = /^\/projects\/[^/]+\/apartments\/[^/]+$/.test(
           <LanguageIcon />
           <ListItemText primary={i18n.language === "en" ? "AR" : "EN"} />
         </ListItem>
-      </List>
+      </List> : <List
+        sx={{
+          fontSize: "1rem",
+          fontWeight: "500",
+          color: "#002D62",
+        }}
+      >
+        <Divider />
+        <ListItem button onClick={changeLanguage}>
+          <LanguageIcon />
+          <ListItemText primary={i18n.language === "en" ? "AR" : "EN"} />
+        </ListItem>
+      </List> }
     </Box>
   );
 
@@ -370,7 +387,14 @@ const isApartmentDetailsPage = /^\/projects\/[^/]+\/apartments\/[^/]+$/.test(
                 borderRadius: "50px",
                 padding: "10px 16px",
               }}
-              onClick={() => handleScroll("contact-us")}
+              onClick={() => {
+              !isProjectsPage &&
+              !isProjectDetailsPage &&
+              !isApartmentDetailsPage &&
+              !isNotFoundPage
+                ? handleScroll("contact-us")
+                : navigateToHome();
+            }}
             >
               {t("contact-us")}
             </Button>

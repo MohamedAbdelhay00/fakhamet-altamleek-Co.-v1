@@ -1,10 +1,12 @@
-import React from "react";
-import { Box, Grid, Typography, Button, CardMedia } from "@mui/material";
+import React, { useState } from "react";
+import { Box, Grid, Typography, Button, CardMedia, IconButton } from "@mui/material";
+import { WhatsApp, Phone } from "@mui/icons-material";
 import { useParams } from "react-router-dom";
 import i18n from "../../../i18n";
 import apartmentsData from "../../../data/apartments"; // Make sure this path is correct
 
 const ApartmentDetails = () => {
+  const [showContactOptions, setShowContactOptions] = useState(false);
   const language = i18n.language;
   const { apartmentId } = useParams(); // Fetch the apartment ID from the URL
   const apartment = apartmentsData.find((apt) => apt.id === parseInt(apartmentId));
@@ -19,8 +21,22 @@ const ApartmentDetails = () => {
     );
   }
 
+  const handleContactClick = () => {
+    setShowContactOptions(!showContactOptions);
+  };
+
+  const handleWhatsAppClick = () => {
+    const phoneNumber = "+966544934745"; // Replace with actual phone number
+    window.open(`https://wa.me/${phoneNumber}?text=Hello, I am interested in the apartment with ID ${apartmentId}`, "_blank");
+  };
+
+  const handlePhoneClick = () => {
+    const phoneNumber = "tel:+966544934745"; // Replace with actual phone number
+    window.location.href = phoneNumber;
+  };
+
   return (
-    <Box sx={{ padding: { xs: "25% 5%", md: "10% 5%"} }}>
+    <Box sx={{ padding: { xs: "25% 5%", md: "10% 5%" } }}>
       {/* Row 1 - Images */}
       <Grid container spacing={2}>
         <Grid item xs={12} md={6}>
@@ -52,7 +68,7 @@ const ApartmentDetails = () => {
         <Grid item xs={12} md={3}>
           <CardMedia
             component="img"
-            image={apartment.images[2] || apartment.mainImage} // Use the third image or fallback to main
+            image={apartment.images[2] || apartment.mainImage}
             alt="Last Image"
             sx={{ height: "100%", width: "100%", objectFit: "cover" }}
             loading="lazy"
@@ -69,6 +85,7 @@ const ApartmentDetails = () => {
             </Typography>
             <Button
               variant="contained"
+              onClick={handleContactClick}
               sx={{
                 marginTop: "2rem",
                 backgroundColor: "#F36F21",
@@ -80,14 +97,33 @@ const ApartmentDetails = () => {
             >
               {language === "ar" ? "تواصل مع الوكيل" : "Contact Agent"}
             </Button>
+            {showContactOptions && (
+              <Box
+                sx={{
+                  display: "flex",
+                  gap: "1rem",
+                  marginTop: "1rem",
+                  animation: "popUp 0.5s ease-out",
+                  "@keyframes popUp": {
+                    from: { transform: "scale(0.5)", opacity: 0 },
+                    to: { transform: "scale(1)", opacity: 1 },
+                  },
+                }}
+              >
+                <IconButton color="success" aria-label="WhatsApp" onClick={handleWhatsAppClick}>
+                  <WhatsApp />
+                </IconButton>
+                <IconButton color="primary" aria-label="Phone" onClick={handlePhoneClick}>
+                  <Phone />
+                </IconButton>
+              </Box>
+            )}
           </Box>
         </Grid>
         <Grid item xs={12} md={6}>
           <Box sx={{ width: "100%" }}>
             <Typography variant="h4" sx={{ color: "#555" }}>
-              {apartment.size} {language === "ar" ? "²م" : "m²"} | {apartment.floors} {language === "ar" ? "طوابق" : "floors"} |{" "}
-              {apartment.beds} {language === "ar" ? "غرف نوم" : "beds"} | {apartment.baths}{" "}
-              {language === "ar" ? "حمامات" : "baths"}
+              {apartment.size} {language === "ar" ? "²م" : "m²"} | {apartment.floors} {language === "ar" ? "طوابق" : "floors"} | {apartment.beds} {language === "ar" ? "غرف نوم" : "beds"} | {apartment.baths} {language === "ar" ? "حمامات" : "baths"}
             </Typography>
             <Typography variant="body2" sx={{ marginTop: "1rem", color: "#F36F21" }}>
               {apartment.view[language]}
